@@ -9,7 +9,7 @@ m2 = Money(100)
 
 # Operator overloading can be acheived using  magic method that is defined in that particular class on whose object you want to operate using operator.
 # the action of the operator is defined inside that particular magic method.
-# And this magic is called immediately when operator overding is occuring and the result is same as the return value of the magic method.
+# And this magic is called immediately when operator overiding is occuring and the result and type is same as the return value and return type of the magic method resp.
 
 print (m1.amt+ m2.amt)
 
