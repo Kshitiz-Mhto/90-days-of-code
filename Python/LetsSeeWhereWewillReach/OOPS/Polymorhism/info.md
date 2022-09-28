@@ -21,4 +21,5 @@
 
 >python provide Method and Constructor overriding 
 
+![alt kk](./overriding-in-python.png)
     
