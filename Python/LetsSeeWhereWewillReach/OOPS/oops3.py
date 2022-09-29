@@ -1,6 +1,3 @@
-from numpy import var
-
-
 class student:
     def setVariableName(self, variableName):
         self.variableName = variableName

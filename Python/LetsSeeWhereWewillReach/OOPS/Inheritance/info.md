@@ -59,3 +59,27 @@ Class DerivedClass(BaseClass):
 ABCDEF
 head element : A
 tail element : BCDEF
+
+
+## super Keyword
+
+> The Python super() function returns objects represented in the parent’s class and is very useful in  multiple and multilevel inheritances to find which class the child class is extending first.
+
+
+Understanding Python `super()` with `__init__()` methods
+
+> Python has a reserved method called `__init__`. In Object-Oriented Programming, it is referred to as a constructor. When this method is called it allows the class to initialize the attributes of the class. In an inherited subclass, a parent class can be referred with the use of the super() function. The super function returns a temporary object of the superclass that allows access to all of its methods to its child class.
+
+*Syntax of `super()` in Python*
+```
+    Syntax: super()
+    Return : Return a proxy object which represents the parent’s class.
+```
+
+*The benefits of using a super() function are:*
+
+>Need not remember or specify the parent class name to access its methods. This function can be used both in single and multiple inheritances.
+
+>This implements modularity (isolating changes) and code reusability as there is no need to rewrite the entire function.
+
+>Super function in Python is called dynamically because Python is a dynamic language, unlike other languages.
