@@ -58,6 +58,12 @@ class C1:
         self.sal = sal
     def __mul__(self, other): # here other is -----> t ref var --------> Time obj. so other ref can access the days value.
         return self.sal * other.days
+    
+# class C1:
+#     def __init__(self, sal):
+#         self.sal = sal
+#     def __mul__(self, other):
+#         return self.sal * other.sal
         
 class Koko:
     def __init__(self, days):
@@ -69,6 +75,7 @@ c = C1(88)
 t = Koko(1)
 t2 = Koko(2)
 print ("the sal is %d times" % (c*t))
+# print ("the sal is %d times" % (c*c))
 print ("the sal is %d times" % (t2*c))
         
 # Method Overloading 
