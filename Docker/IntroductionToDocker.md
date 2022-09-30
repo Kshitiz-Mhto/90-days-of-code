@@ -157,7 +157,7 @@ Docker configure, install , boot and login the Operating System within a second.
 ![alt docker inspect](./assets/inspect0.png)
 ![alt docker inspect](./assets/inspect1.png)
 ![alt docker inspect](./assets/inspect2.png)
-![alt docker inspect](./assets/inpect.png)
+![alt docker inspect](./assets/inpsect.png)
 
 ## Sharing the images [Export and Import]
 
@@ -194,3 +194,5 @@ then,
 then, transfer the file to another system.
 
 `docker load -i <path to that file> `
+
+## Networking

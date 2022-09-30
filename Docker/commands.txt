@@ -214,22 +214,8 @@ docker info
   807  docker inspect zealous_black
   808  docker container inspect --format "{ IPaddress }" web
   809  docker container inspect 59bdeb --format "{ IPaddress }" web
-  810  docker container inspect --format "{ IPaddress }" 59bdeb
-  811  docker container inspect --format "${ IPaddress }" 59bdeb
-  812  docker container inspect --format "{ IPaddress }" 59bdeb
   813  docker container inspect --format "hi " 59bdeb
-  814  docker container inspect --format " hi " 59bdeb
-  815  docker container inspect --format "{{ IPaddress} }" 59bdeb
-  816  docker container inspect --format "{{ IPaddress }}" 59bdeb
-  817  docker container inspect --format "{{ IPAddress }}" 59bdeb
   818  docker inspect 59bdeb
-  819  docker container inspect --format {{ NetworkSettings }} 59bdeb
-  820  docker container inspect --format {{ IPAddress }} 59bdeb
-  821  docker container inspect --format {{ Networks }} 59bdeb
-  822  docker container inspect --format {{ NetworkSettings.IPAddress }} 59bdeb
-  823  docker container inspect --format {{ NetworkSettings.Networks.IPAddress }} 59bdeb
-  824  docker container inspect --format {{ .NetworkSettings.Networks.IPAddress }} 59bdeb
-  825  docker container inspect --format {{ .NetworkSettings.IPAddress }} 59bdeb
   826  docker container inspect --format "{{ .NetworkSettings.IPAddress }}" 59bdeb
   827  docker container inspect --format "{{ .NetworkSettings.IPAddress }}" 59bdeb
   828  docker container inspect --format "{{ .NetworkSettings.IPPrefixLen }}" 59bdeb
