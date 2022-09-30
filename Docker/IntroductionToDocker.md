@@ -238,6 +238,7 @@ then, transfer the file to another system.
 > With Ctrl + d --> stops the running container
 
 or,
+
 `docker exec -it <container id> <command>`
 > It basically execute the command inside the selected container and return back.
 > Help in automating and scripting
@@ -253,7 +254,7 @@ or,
 
 > Before jumping into Docker network architecture.
 
-<u>*Default Gateway*</u>
+### <u>*Default Gateway*</u>
 
 ![alt default gateway](./assets/defaultrouter.png)
 
@@ -264,7 +265,7 @@ In most homes and small offices, the default gateway is a router that directs tr
 
 ![alt gateway](./assets/route.png)
 
-<u>*Subnet Mask*</U>
+### <u>*Subnet Mask*</U>
 
 ![alt subnet mask](./assets/subnetting.jpg)
 
@@ -287,6 +288,7 @@ A subnet mask reveals how many bits in the IP address are used for the network b
 ![alt docker lab](./assets/dockerlab.png)
 
 *COMMAND*
+
 `docker network ls`
 
 > preconfigured drivers and detail can be show using following command.
@@ -307,7 +309,7 @@ A subnet mask reveals how many bits in the IP address are used for the network b
 
 <br>
 
-<u>*Creating own network*</U>
+### <u>*Creating own network*</U>
 
 *COMMAND*
 
@@ -322,4 +324,37 @@ A subnet mask reveals how many bits in the IP address are used for the network b
 > We specify inwhich network to launch our containers
 
 *COMMAND*
+
+`docker run -dit --name <custom name> --network <network name>  <image>`
+
+![alt multicontainers in a network](./assets/twocontainerinnetwork.png)
+
+> if the multiple containers in custom network, DNS resovling aka linking  is provided whereas not in default network.
  
+ ![alt communicating with containers within a network ](./assets/communicationwithinnetwork.png)
+
+ ![alt communicating within default network](./assets/pinging.png)
+
+> we can launch container in None network for max. security and some testing stuff. The None network is absolutly isolated.
+
+*RECOMMANDED*
+
+`docker run -dit --name <custom name> --network-alias <custom name> --network <network name>  <image>`
+
+> Alias are given to container for easy classificatio and identifying of which network group they belong
+ 
+### Connection with Contianers and Networks.
+
+> Disconneting the container from network and connecting to another network.
+
+> Highly used while testing.
+
+`docker network disconnect <container id> <network name>`
+
+![alt connect and disconnect](./assets/connectdisconnet.png)
+
+`for [os] container`
+
+![alt connected](./assets/connect.png)
+![alt connected](./assets/disconnectos.png)
+![alt connected](./assets/thenconnect.png)
