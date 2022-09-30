@@ -278,3 +278,48 @@ A subnet mask reveals how many bits in the IP address are used for the network b
 ![alt subnet mask](./assets/gate.png)
 
 ![alt subnet mask](./assets/gateway.png)
+
+<br>
+
+## Docker Networking begins!!
+
+> Virtual Lab using Containers and docker network.
+![alt docker lab](./assets/dockerlab.png)
+
+*COMMAND*
+`docker network ls`
+
+> preconfigured drivers and detail can be show using following command.
+
+> *bridge* is the default network so whenever we launch the containers all the container reside in the *bridge* network *by default*.
+
+`docker config`
+
+`docker network inspect <network driver>`
+![alt driver inspectionx](./assets/networkdrivers.png)
+
+> Here, IP Adress Manager (IPAM) basically a Database that store network names, driver detail, ip addresses, and so on. Inside this, we have DHCP, DNS ..
+
+![alt lab Architecture](./assets/dockelabarchitecture.png)
+
+> As we know `switch` and `router`are physical device but we can recreatet these device in software form using some software or tools then they are considered as bridge.
+> So Bridge a kind of working as switch and also router in the network.
+
+<br>
+
+<u>*Creating own network*</U>
+
+*COMMAND*
+
+`docker network create <network name>`
+
+> along with selection of available driver
+
+`docker network create <network name> --driver=<driver name>`
+
+![alt network creation](./assets/networkcreation.png)
+
+> We specify inwhich network to launch our containers
+
+*COMMAND*
+ 
