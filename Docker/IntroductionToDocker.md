@@ -72,6 +72,8 @@ Containers are defined bu its image as well as any configuration option we provi
 ## Why Docker is so fast? 
 >
 
+<br>
+
 **Lets Make hand dirty with docker**
 
 *staring the docker engine on top of OS*
@@ -97,10 +99,10 @@ systemctl status snap.docker.dockerd.service
 <div align="center">
     <a href="#"><img align="center" src="./assets/status.png" height="400"></a>
 </div>
+
 <br/>
 
-## Lets play with docker CLI
-
+## Lets play with docker CLI and launching the containers
 
 *when we execute `docker run <images>`*
 
@@ -117,9 +119,18 @@ Docker configure, install , boot and login the Operating System within a second.
 > Also we can execute the particular process and exit the container but don't delete the container.
 
 *COMMAND* 
-`docker run ubuntu <command>` 
+`docker run <image id> <command>`  
+> container run in background and execute the command with no terminal and no interactive medium and exits immediately.
+> used with non interactive commands like date, ping
 
---> enter the os execute the command and exit the container
+`docker run -it <image>`
+> container run with provided terminal to interact with the contianer
+
+`docker run -dit <image>`
+> container run in detached mode or in background with out giving a interactive terminal at initial.
+
+![alt detach flag](./assets/detach.png)
+
 
 `docker run --rm ubuntu <command>`
 
@@ -130,6 +141,8 @@ Docker configure, install , boot and login the Operating System within a second.
 > Removing the images and containers
 
 ![alt command](./assets/pruneAndremove.png)
+
+<br>
 
 ## Lets play with information 
 
@@ -195,4 +208,73 @@ then, transfer the file to another system.
 
 `docker load -i <path to that file> `
 
-## Networking
+<br>
+
+## Lets play with some details behind docker containers
+
+> we can monitor the running container using some commands
+
+*COMMAND*
+
+`docker logs <container id>`
+![alt logs](./assets/log1.png)
+![alt logs](./assets/log3.png)
+
+> For live monitoring we can use fetch (-f) as flag
+
+*COMMAND*
+
+`docker logs -f <container id>`
+![alt logs](./assets/rundock.png)
+![alt logs](./assets/logs-f.png)
+
+## lets connect with the running container
+
+*COMMAND*
+
+`docker attach <container id>`
+> It let inside the container 
+> It increase the human intervention so not prefer this command
+> With Ctrl + d --> stops the running container
+
+or,
+`docker exec -it <container id> <command>`
+> It basically execute the command inside the selected container and return back.
+> Help in automating and scripting
+
+`docker exec -it <container id> bash`
+> With Ctrl + d --> exits the bash, don't stop the running contianer
+
+![alt rouch](./assets/touchContainer.png)
+
+<br>
+
+## Networking Stuff
+
+> Before jumping into Docker network architecture.
+
+<u>*Default Gateway*</u>
+
+![alt default gateway](./assets/defaultrouter.png)
+
+```
+Think of a default gateway as an intermediate device between the local network and the internet. The default gateway transfers internal data to the internet and back again.
+In most homes and small offices, the default gateway is a router that directs traffic from the local network to the cable or DSL modem, which sends it to the internet service provider (ISP).
+```
+
+![alt gateway](./assets/route.png)
+
+<u>*Subnet Mask*</U>
+
+![alt subnet mask](./assets/subnetting.jpg)
+
+```
+When a bigger network is divided into smaller networks, to maintain security, then that is known as Subnetting.
+Each network is considered as subnets.
+A subnet mask reveals how many bits in the IP address are used for the network by masking the network portion of the IP address.
+```
+![alt subnetting in action](./assets/subnettingaction.png)
+
+![alt subnet mask](./assets/gate.png)
+
+![alt subnet mask](./assets/gateway.png)
