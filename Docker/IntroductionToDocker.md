@@ -7,13 +7,23 @@
 Docker is a Containerization tool for developing, shippiing, and running applications. It enables separation of applications from infrastructure so that software can be quickly delivered and reduces the delay between writing code and running it in production.
 ```
 
-## Containerization 
+<div align="center">
+    <h1>Containerization</h1>
+</div>
 
 ```
 Containerization is the packaging together of software code with all it’s necessary components like libraries, frameworks, and other dependencies so that they are isolated in their own "container" aka isolated environment.
 Containerization technology tools like Docker, Containerd, and so on.
 Software containers are a form of OS virtualization where the running container includes just the minimum operating system resources, memory and services required to run an application or service.
 ```
+<div align="center">
+    <h1> Containerization Architecture</h1>
+</div>
+
+<div align="center">
+    <a href="#"><img align="center" src="./assets/containerizationArch.png" height="400"></a>
+</div>
+<br/>
 
 ## Docker objects
 - Images
@@ -119,14 +129,18 @@ Docker configure, install , boot and login the Operating System within a second.
 > Also we can execute the particular process and exit the container but don't delete the container.
 
 *COMMAND* 
+
 `docker run <image id> <command>`  
+
 > container run in background and execute the command with no terminal and no interactive medium and exits immediately.
 > used with non interactive commands like date, ping
 
 `docker run -it <image>`
+
 > container run with provided terminal to interact with the contianer
 
 `docker run -dit <image>`
+
 > container run in detached mode or in background with out giving a interactive terminal at initial.
 
 ![alt detach flag](./assets/detach.png)
@@ -148,7 +162,7 @@ Docker configure, install , boot and login the Operating System within a second.
 
 *COMMAND*
 
-- `docker info`
+`docker info`
 
 <div align="center">
     <a href="#"><img align="left" src="./assets/info0.png" height="400"></a>
@@ -212,6 +226,8 @@ then, transfer the file to another system.
 
 ## Lets play with some details behind docker containers
 
+<br>
+
 > we can monitor the running container using some commands
 
 *COMMAND*
@@ -250,7 +266,9 @@ or,
 
 <br>
 
-## Networking Stuff
+<div align="center">
+    <h1>Networking Stuff</h1>
+</div>
 
 > Before jumping into Docker network architecture.
 
@@ -309,7 +327,9 @@ A subnet mask reveals how many bits in the IP address are used for the network b
 
 <br>
 
-### <u>*Creating own network*</U>
+<div align="center">
+    <h1>Creating own network</h1>
+</div>
 
 *COMMAND*
 
@@ -350,6 +370,8 @@ A subnet mask reveals how many bits in the IP address are used for the network b
 > Highly used while testing.
 
 `docker network disconnect <container id> <network name>`
+`docker network connect <container id> <network name>`
+
 
 ![alt connect and disconnect](./assets/connectdisconnet.png)
 
@@ -358,3 +380,65 @@ A subnet mask reveals how many bits in the IP address are used for the network b
 ![alt connected](./assets/connect.png)
 ![alt connected](./assets/disconnectos.png)
 ![alt connected](./assets/thenconnect.png)
+
+<div align="center">
+    <h1> Docker Architecture</h1>
+</div>
+
+## High-Level overview of initializing container
+
+<div align="center">
+    <a href="https://blog.opstree.com/2020/01/21/docker-inside-out-a-journey-to-the-running-container/"><img align="center" src="./assets/containerInitailization.png" height="400"></a>
+</div>
+<br/>
+
+## Componets invovled
+```
+
+    1.Docker-cli
+    2.Dockerd
+    3.Containerd
+    4.RunC
+    5.Containerd-shim
+
+```
+
+> `Docker-cli`: Used to make Docker API calls basically act as an agent with docker daemon and clients.
+
+> `Dockerd`: Listens for Docker API requests, dockerd can listen for Docker Engine API requests via three different types of Socket: unix, tcp, and fd and manages host’s container life-cycles with the help of containerd. Hence, actual container life-cycle management is outsourced to containerd. 
+
+>`Containerd`: Actually manages container life-cycle through the below-mentioned tasks:
+- Image push and pull
+- Management of storage
+- execution ofcontainers by calling runc with the right parameters to run containers.
+
+### Subsystem of Containerd
+
+> `Containerd shim`: Shim is the parent process of every container started and it also allows daemon-less containers. First, it allows the runtimes, i.e. runc, to exit after which it starts the container.  This way we don’t have to have the long-running processes for containers.So, when we start container we can only see the container running and shim.
+
+`Daemon-less container`
+
+> When containerd shim was not there, upgrading docker daemon without restarting all your containers was a big pain. Hence, containerd shim got introduced to solve this problem.
+
+> `Runc`: A command-line tool for spawning and running the container according to OCI runtine specifications. After the container is successfully started, runc exits immediately.
+
+## Docker internal Architecture
+
+<br>
+
+<div align="center">
+    <a href="#"><img align="center" src="./assets/dockerInternals.png" height="400"></a>
+</div>
+<br/>
+
+## Processes involved during initialziation of Container:
+
+<br>
+
+*COMMAND*
+
+`pstree -pg | grep -e docker -e containerd`
+`ps fxa | grep -i “docker” -A 3 | grep -v “java”` --> for 
+
+![alt operation inspection](./assets/inspectionInitailization.png)
+![alt operation inspection](./assets/inspection1.png)
