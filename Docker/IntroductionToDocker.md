@@ -40,6 +40,7 @@ Images also can be called Classes, a kind of blueprint or templates for where cr
 ```
 
 *Docker Image Creation*
+
 - Using `docker commit <existing container> <Name for new image>`
 
 > Here, docker basically clone the existing container and all the changes made to the container and then create a new image out of it. 
@@ -50,7 +51,7 @@ Images also can be called Classes, a kind of blueprint or templates for where cr
 
 *COMMAND*
 
-` docker build -t <image name> <location of the folder where the Dockerfile exist along with the project you want to containerize>`
+` docker build -t <custom image name> <location of the folder where the Dockerfile exist along with the project you want to containerize>`
 
 ![alt Dockerfile](./assets/pyDockerfile.png)
 
@@ -62,6 +63,17 @@ Container is an isolated method of packaging application code, all its dependenc
 we can control how isolated a container’s network, storage, or other underlying subsystems are from other containers or from the host machine.
 Containers are defined bu its image as well as any configuration option we provide to it during the container creation or initiation.
 ```
+
+### Lets play with Dockerfile
+
+![alt rise Dockerfile](./assets/Dockerfilepp.png)
+
+
+> Demo using spring project
+
+
+
+
 
 ## Docker Architecture [[simplified](https://iximiuz.com/en/posts/implementing-container-runtime-shim/)]
 
@@ -79,8 +91,6 @@ Containers are defined bu its image as well as any configuration option we provi
 |![alt](./assets/baremetal.png)|![alt](./assets/cc.png)|![alt](./assets/vm.png)|![alt](./assets/dockerarche.png)|
 |Operating System |Instances |Virtual Machine| Container|
 
-## Why Docker is so fast? 
->
 
 <br>
 
@@ -200,11 +210,18 @@ Docker configure, install , boot and login the Operating System within a second.
 <br>
 
 *COMMAND*
-`docker push <image name>` --> `image name` syntax --> `docker_user_id/image_name`
+
+`docker push <image name>`
+
+*syntax*
+
+`docker_user_id/image_name`
 
 then, 
 
 `docker pull <image name>`
+
+<br>
 
 - Docker `save` and `load`
 
@@ -216,7 +233,7 @@ then,
 
 *COMMAND*
 
-`docker save <docker image> <custom name for your file>` 
+`docker save <docker image> -o <custom name for your file>` 
 
 then, transfer the file to another system.
 
@@ -241,6 +258,7 @@ then, transfer the file to another system.
 *COMMAND*
 
 `docker logs -f <container id>`
+
 ![alt logs](./assets/rundock.png)
 ![alt logs](./assets/logs-f.png)
 
@@ -316,7 +334,19 @@ A subnet mask reveals how many bits in the IP address are used for the network b
 `docker config`
 
 `docker network inspect <network driver>`
+
 ![alt driver inspectionx](./assets/networkdrivers.png)
+
+>Docker networking is a passage of communication among all the isolated containers. There are mainly five network drivers in docker:
+
+- Bridge: It is the default network for containers that are not able to communicate with the outside world. You use this network when your application is running on standalone containers, i.e., multiple containers in a network that only lets them communicate with each other and not the outside world.
+
+- Host: This driver allows for seamless integration of Docker with your resources running on your local machine. It relies on the native network capabilities of your machine to provide low-level IP tunneling and data link layer encryption between the Docker apps running on different endpoints.
+
+- Overlay network: This is a type of software-defined networking technology that allows containers to communicate with other containers. To connect it to an external host, first, you must create a virtual bridge on one host and then create an overlay network. You’ll also need to configure the overlay network and grant access from one side to the other. A “none” type driver usually means that the networking is disconnected.
+
+- macvlan: In order to assign an address for containers and make them similar to that of physical devices, you can use the macvlan driver. What makes this unique is that it routes traffic between containers through their associated MAC addresses rather than IPs. Use this network when you want the containers to look like physical devices, for example during migration of a VM setup.
+
 
 > Here, IP Adress Manager (IPAM) basically a Database that store network names, driver detail, ip addresses, and so on. Inside this, we have DHCP, DNS ..
 
@@ -435,10 +465,14 @@ A subnet mask reveals how many bits in the IP address are used for the network b
 
 <br>
 
+> To view the processes.
+
 *COMMAND*
 
 `pstree -pg | grep -e docker -e containerd`
-`ps fxa | grep -i “docker” -A 3 | grep -v “java”` --> for 
+
+`ps fxa | grep -i “docker” -A 3 | grep -v “java”`  
 
 ![alt operation inspection](./assets/inspectionInitailization.png)
 ![alt operation inspection](./assets/inspection1.png)
+
