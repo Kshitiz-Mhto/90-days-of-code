@@ -66,14 +66,9 @@ Containers are defined bu its image as well as any configuration option we provi
 
 ### Lets play with Dockerfile
 
-![alt rise Dockerfile](./assets/Dockerfilepp.png)
-
-
 > Demo using spring project
 
-
-
-
+![alt letsee Dockerfile](./assets/letseeBuilding.png)
 
 ## Docker Architecture [[simplified](https://iximiuz.com/en/posts/implementing-container-runtime-shim/)]
 
@@ -475,4 +470,9 @@ A subnet mask reveals how many bits in the IP address are used for the network b
 
 ![alt operation inspection](./assets/inspectionInitailization.png)
 ![alt operation inspection](./assets/inspection1.png)
+
+
+<div>
+    <h1>Docker Storage</h1>
+</div>
 
