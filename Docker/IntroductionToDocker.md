@@ -476,3 +476,57 @@ A subnet mask reveals how many bits in the IP address are used for the network b
     <h1>Docker Storage</h1>
 </div>
 
+```
+By default, all files created inside a container are stored on a writable container layer.
+The data don't persist when the container no longer exists.
+Container's writeable layer is tightly coupled to the host machine where container is running lead in diffulty for data transpotation.
+Writing into container's writable layer requires a storage driver to manage file system.
+```
+
+*Types of Storage*
+
+> `Ephemeral storage` the volatile temporary storage attached to your instances which is only present during the running lifetime of the instance. Basically, Temporary in nature. Like C: drive, browser storing your password.
+
+> `Persistent storage` is any data storage device that retains data after power to that device is shut off. Permanent in nature like  D: drive, cloud storage, pen drive.
+
+*Type of Docker Storage*
+
+![alt docker storage](./assets/Docker-storage-view-2.png)
+
+> Where `Volumes` and `Blind Mount` are permanent in nature while `tmpfs` uses the host memory.
+
+> Volumes have a dedicated filesystem on the host (/var/lib/ docker/volumes) and are directly controlled through the Docker CLI. On the other hand, bind mounts use any available host filesystem.
+
+![alt persistent storage](./assets/storagePersistent.png)
+
+### Lets play with docker storage.
+
+>What we are trying to acheive:
+
+![alt docker volume blind](./assets/attachMout.png)
+
+*Practical*
+
+![alt docker volume](./assets/DockerVolume.png)
+
+![alt Docker volumes](./assets/egPersistent.png)
+
+*such persistent storage in docker which is offered by docker volumes is highly used for Load Balancing as Centralized storage as described below image:*
+
+> Such architecture is highly beneficial for upating the program in all the containers at once rather doing in one after another containers.Also being permanent in nature, the failure of the container will not affect the common data used in all the containers.
+
+![alt centralized storage](./assets/CentralizedStorage.png)
+
+> The storage for the docker volume is actually occupied in the Host system ie, `/var/snap/docker/common/var-lib-docker/volumes/` as `source` and `/mydrive` as `destination`
+> All the volumes created are present inside the above mentionedfolder along with the data.
+
+>`/var/snap/docker/common/var-lib-docker/volumes/penD0/_data` as `source` and `/mydrive` as `destination`
+
+![alt host storage](./assets/localStorage.png)
+![alt Mount section](./assets/Mountinspect.png)
+
+> Let's do it with custom source and destination.
+
+> Acessing and using the software, files inside the container from Host machine.
+
+![alt custom persistent source](./assets/persistentWithCustomSource.png)
