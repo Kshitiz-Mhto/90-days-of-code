@@ -9,3 +9,13 @@
 
 ![alt](./assets/jenkinsJar.png)
 ![alt](./assets/jenkinsConsole.png)
+
+> Chain jobs and Pipelines
+
+*Concept of Upstream and Downstream project should be known*
+
+![alt](./assets/myjobs.png)
+![alt](./assets/devjob.png)
+![alt](./assets/buildjob.png)
+![alt](./assets/testjob.png)
+![alt](./assets/pipeline.png)

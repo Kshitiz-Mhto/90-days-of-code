@@ -4,7 +4,9 @@
 <br/>
 
 ```
-Docker is a Containerization tool for developing, shippiing, and running applications. It enables separation of applications from infrastructure so that software can be quickly delivered and reduces the delay between writing code and running it in production.
+Docker is a Containerization tool for developing, shippiing, and running applications. 
+It enables separation of applications from infrastructure so that 
+software can be quickly delivered and reduces the delay between writing code and running it in production.
 ```
 
 <div align="center">
@@ -36,7 +38,8 @@ and so on
 *Docker Imgaes*
 
 ```
-Images also can be called Classes, a kind of blueprint or templates for where creation of container happens. Every images itself based upon another images. Like Every class inheritates Object class in JAVA
+Images also can be called Classes, a kind of blueprint or templates for where creation of container happens.
+Every images itself based upon another images. Like Every class inheritates Object class in JAVA
 ```
 
 *Docker Image Creation*

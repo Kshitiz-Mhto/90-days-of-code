@@ -1,0 +1,12 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'trying to clone a git repo.'
+                git branch: 'main', url: 'https://github.com/dailydotdev/docs'
+            }
+        }
+    }
+}
