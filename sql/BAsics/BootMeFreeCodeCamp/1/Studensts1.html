@@ -1,0 +1,2579 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><style>body {
+  max-width: 980px;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 45px;
+}
+
+@font-face {
+  font-family: fontawesome-mini;
+  src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAABE0AA8AAAAAHWwAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABHU1VCAAABWAAAADsAAABUIIslek9TLzIAAAGUAAAAQwAAAFY3d1HZY21hcAAAAdgAAACqAAACOvWLi0FjdnQgAAAChAAAABMAAAAgBtX/BGZwZ20AAAKYAAAFkAAAC3CKkZBZZ2FzcAAACCgAAAAIAAAACAAAABBnbHlmAAAIMAAABdQAAAjkYT9TNWhlYWQAAA4EAAAAMwAAADYQ6WvNaGhlYQAADjgAAAAfAAAAJAc6A1pobXR4AAAOWAAAACAAAAA0Kmz/7mxvY2EAAA54AAAAHAAAABwQPBJubWF4cAAADpQAAAAgAAAAIAEHC/NuYW1lAAAOtAAAAYQAAALxhQT4h3Bvc3QAABA4AAAAfgAAAMS3SYh9cHJlcAAAELgAAAB6AAAAhuVBK7x4nGNgZGBg4GIwYLBjYHJx8wlh4MtJLMljkGJgYYAAkDwymzEnMz2RgQPGA8qxgGkOIGaDiAIAJjsFSAB4nGNgZHZmnMDAysDAVMW0h4GBoQdCMz5gMGRkAooysDIzYAUBaa4pDA4Pwz+yMwf9z2KIYg5imAYUZgTJAQDcoQvQAHic7ZHNDYJAFIRnBXf94cDRIiyCKkCpwFCPJ092RcKNDoYKcN4+EmMPvpdvk539zQyAPYBCXEUJhBcCrJ5SQ9YLnLJe4qF5rdb+uWPDngNHTkta101pNyWa8lMhn6xx2dqUnW4q9YOIhAOOeueMSgsR/6ry+P7O5s6xVNg4chBsHUuFnWNJ8uZYwrw7chrsHXkODo7cB0dHOYCTY8kv0VE2WJKD6gOlWjsxAAB4nGNgQAMSEMgc9D8LhAESbAPdAHicrVZpd9NGFB15SZyELCULLWphxMRpsEYmbMGACUGyYyBdnK2VoIsUO+m+8Ynf4F/zZNpz6Dd+Wu8bLySQtOdwmpOjd+fN1czbZRJaktgL65GUmy/F1NYmjew8CemGTctRfCg7eyFlisnfBVEQrZbatx2HREQiULWusEQQ+x5ZmmR86FFGy7akV03KLT3pLlvjQb1V334aOsqxO6GkZjN0aD2yJVUYVaJIpj1S0qZlqPorSSu8v8LMV81QwohOImm8GcbQSN4bZ7TKaDW24yiKbLLcKFIkmuFBFHmU1RLn5IoJDMoHzZDyyqcR5cP8iKzYo5xWsEu20/y+L3mndzk/sV9vUbbkQB/Ijuzg7HQlX4RbW2HctJPtKFQRdtd3QmzZ7FT/Zo/ymkYDtysyvdCMYKl8hRArP6HM/iFZLZxP+ZJHo1qykRNB62VO7Es+gdbjiClxzRhZ0N3RCRHU/ZIzDPaYPh788d4plgsTAngcy3pHJZwIEylhczRJ2jByYCVliyqp9a6YOOV1WsRbwn7t2tGXzmjjUHdiPFsPHVs5UcnxaFKnmUyd2knNoykNopR0JnjMrwMoP6JJXm1jNYmVR9M4ZsaERCICLdxLU0EsO7GkKQTNoxm9uRumuXYtWqTJA/Xco/f05la4udNT2g70s0Z/VqdiOtgL0+lp5C/xadrlIkXp+ukZfkziQdYCMpEtNsOUgwdv/Q7Sy9eWHIXXBtju7fMrqH3WRPCkAfsb0B5P1SkJTIWYVYhWQGKta1mWydWsFqnI1HdDmla+rNMEinIcF8e+jHH9XzMzlpgSvt+J07MjLj1z7UsI0xx8m3U9mtepxXIBcWZ5TqdZlu/rNMfyA53mWZ7X6QhLW6ejLD/UaYHlRzodY3lBC5p038GQizDkAg6QMISlA0NYXoIhLBUMYbkIQ1gWYQjLJRjC8mMYwnIZhrC8rGXV1FNJ49qZWAZsQmBijh65zEXlaiq5VEK7aFRqQ54SbpVUFM+qf2WgXjzyhjmwFkiXyJpfMc6Vj0bl+NYVLW8aO1fAsepvH472OfFS1ouFPwX/1dZUJb1izcOTq/Abhp5sJ6o2qXh0TZfPVT26/l9UVFgL9BtIhVgoyrJscGcihI86nYZqoJVDzGzMPLTrdcuan8P9NzFCFlD9+DcUGgvcg05ZSVnt4KzV19uy3DuDcjgTLEkxN/P6VvgiI7PSfpFZyp6PfB5wBYxKZdhqA60VvNknMQ+Z3iTPBHFbUTZI2tjOBIkNHPOAefOdBCZh6qoN5E7hhg34BWFuwXknXKJ6oyyH7kXs8yik/Fun4kT2qGiMwLPZG2Gv70LKb3EMJDT5pX4MVBWhqRg1FdA0Um6oBl/G2bptQsYO9CMqdsOyrOLDxxb3lZJtGYR8pIjVo6Of1l6iTqrcfmYUl++dvgXBIDUxf3vfdHGQyrtayTJHbQNTtxqVU9eaQ+NVh+rmUfW94+wTOWuabronHnpf06rbwcVcLLD2bQ7SUiYX1PVhhQ2iy8WlUOplNEnvuAcYFhjQ71CKjf+r+th8nitVhdFxJN9O1LfR52AM/A/Yf0f1A9D3Y+hyDS7P95oTn2704WyZrqIX66foNzBrrblZugbc0HQD4iFHrY64yg18pwZxeqS5HOkh4GPdFeIBwCaAxeAT3bWM5lMAo/mMOT7A58xh0GQOgy3mMNhmzhrADnMY7DKHwR5zGHzBnHWAL5nDIGQOg4g5DJ4wJwB4yhwGXzGHwdfMYfANc+4DfMscBjFzGCTMYbCv6dYwzC1e0F2gtkFVoANTT1jcw+JQU2XI/o4Xhv29Qcz+wSCm/qjp9pD6Ey8M9WeDmPqLQUz9VdOdIfU3Xhjq7wYx9Q+DmPpMvxjLZQa/jHyXCgeUXWw+5++J9w/bxUC5AAEAAf//AA94nIVVX2hbZRQ/5/t7893s5ja9f7ouzdZ0TTqz3bRJmogbWya6bG6Cq0VbSV2ddIJjFtfIQHEig80Hda8yUN/0YQz8AyriiyD+xQd92R4HCnaCb3samnpumrpsCsLlfPf7zvedc37nL3CAtc/5W/wQZGA3tOBSY/g+TMjHmwzEoM1Q8+ZjRZY4oJhmBw5/YB6Za0yC5AkhlwA1A1yCBIBOwCII0Cj0U8BAMdUCzq05sKwkP7SlUY6fcJk4Fb/RyE79/6P5hjM/F4aZiXBoeMgzcqQ4Xi1hPqfDLG5FT+lchCVU3lYMyvuwhl1mqndQL0RsuloLywHtthLXI06OblTrhfWVnpSJ5+mwu/JdbtuN3IAnkW0LLMcRwaC7ktrlzridM6kVdyf9uO1UNBByI7JhwtG2sEwab07ORBeilWhqavJCqV0qzZTOl/7ZXQ5TbTcdcFelyGhhRDAQpdqp1FEX3w3cFTc1k9pJQkmm4ySCbSikxRP2QOfN+0tHS5MrpQuTU1Mk5nw0E5Xa0WvrOwDyGax9yB9ma6DAg82wHc43SAGTI4GjBWebOePAERFE8/AHaQpZASSTy8A4WwZiLQMQ82mFKATO0ILicRAoDm9p5P99E5b/fXG+kQYY3TYUuqmERWYoT0u/GNYL2q/4WB3LaVS+VynXsVYIcWw6DkCh3nX1D+VzlYN4LClF5yexSQos8exqZ3KVP+wtrC54u4Nznq6cq+xpMpUUnZ8FUYzE86ud0g28NOIv3Gj5/rmA3ABs7S/ywzFuQ4qyd6QxfNtiQIaEgp3w/entQg4Vcbqa16M5FfpeUB8t1+qeg7mI7cUyOe79wOk86gSxkVec4KPTX69++5x68Yubn5/F+w52z7u08sJX7fZXv8ekT/d2mILJxq6sn+SC6qEJknzLJCxyZEKwWVqYmAPBxBE/9DLeZiWHu7lcr/VytrCRuHojncNuTt9h46tmacmYisnSamdN2bZptcsmSysdVsy1PrOvOzF3xN64Rb937t/og9KHxYdcjIUqFAmIAHGHNzlns+RTPgeUYAQm9DwpNxfxbhhBHPaw3/gfTcXO2L+eJVIx5nsyGkvm9X4/f+bGkH45G0PaSjcMXTjcZyTvi3UdHoCDjQd3IDUVsgwYmUoJK/gp4JJxeRI0MKHZIkgynyIBqBTOUs6rOVCojvjZ4mCQz49ZMlMcp8QoYk6NoBfsxnJtsBohpa8iGJS+ZH7gU7NxME6cmF+t7cO9vB8d3jTWSct0ycW9ranXmolNDwmVkNnxe+8JtoztwS5rKJ0xWS95tQ/1zMYzg69MzUZnNtl1ofNbsml/OJm6f9wjRjpnu2o4MzHzn77IQkRd+1DjwMQ2pqSjGMMhyjrgTbBAKksuUm0iU7hI0aN2wOKOq7WYBSH0HGihj/jkiPxAfmwsEbfYrjMG+j3ij932Db/LV7I/xruNrhnroxjR9HRMb2nTvO0ZXOoHPk8H2ZhDPx93qcE/53sH5np/dkIP7zzhTVKdR/BAY/9ElkkR+A6lJGsqpJ4oQcTxpvBT3Kn58VkaJjgHyPEIws57xkaHh9KuVpDEpJZeMbZ5w/zBHi5NMQ4r5VphsFqID7TyB9eR4pX216c3AHxpdAwoqU9qg0ZJ6yVLKmMSz1iG2z27ifx18NkY0LPx1W/wCc2l5LrznrIsiKsqbmB78A9wIGx4tI8rjihVHJyY9pgMirenVq0yWg7Iw7eogG7ZgYM3qR9959A/fZkg6MnD/exlkmc+jWV4SB15XUR+eqC6l6ZmgPtN9z5JMfik05OV8ljylunJ4J+wA/FUaQSSKotsYsCWqaPBidBLcxkWx7XKFRIb45TGaEhjlF9uUVPqXOtcIwsXbBvfoZXIyRYFdkfnqjExH98xpnPczqzjX/uNdO1Y17Wpi5+6Ts8BXtjVFasp9KZ1mOiNbH65c5w6HgmyF2jFCZywM8mWjRc7T5Pmt0lRy7Y71+jYbpGyvwG4sH0XeJxjYGRgYADiwBB/53h+m68M3MwvgCIM1z5N/g6j///9v5H5BbMnkMvBwAQSBQCIcA9gAHicY2BkYGAO+p8FJF/8//v/F/MLBqAICuAFALYQB5kAeJxjfsHAwLwAiCNB+P9fbJjJmoGBMRUo/wKCAfO2EnQAAAAAANoBXgGcAgICVALaA1IDvAPkBAYEPARyAAEAAAANAF0ABAAAAAAAAgAUACQAcwAAAG4LcAAAAAB4nHWRzWrCQBSFT+pPqUIXLXTTzayKUohGKIibCoLuhbrrYtTRxCYZmYyKyz5Fd32HvlDfoO/QkziIFJtw9bvnnpl7ZwLgBt/wcHieGAf2UGd24Atcou+4RH3kuEweO66QXx1XyaHjGh6ROa7jFp/cwStfMVvhy7GHO+/e8QWuvcBxifqz4zL5xXGF/Oa4Sn53XMPE+3Bcx4P3M9DrvYmWoRWNQVN02kFXTPdCU4pSGQu5saE2meiLhU6timPtz3SSs9ypTCdqrJabWJoT5QQnymSRTkXgt0/UkUqVkVbN807ZdtmxdiEWRidi6HqItdErNbN+aO2612qd9sYAGmvsYRBhyUu0EGhQbfK/gzYCdElTOgSdB1eEFBIxFYkNV4RFJWPeZyyYpVQVHTHZx4y/yVGX2LGWFZri51TccUOn5B7nPefVCSPvGhVVwUl9znveO2KkhV8Wk82PZ8qwZf8OVcu1+fSmWCMw/HMOwXvKaysqM+p+cVuWag8tvv+c+xdd+4+teJxtjUEOwiAURJla24KliQfhUA2g/Sl+CKXx+loNrpzVezOLEY34Ron/0WhwQoszOvQYIKFwwQiNSbSBeO2SZ0tBP4j3zVjKNng32ZmtD1VVXCuOiw/pJ8S3WOU6l+K5UOTaDC4+2TjKMtN9KQf1ezLx/Sg/00FCvABHhjDjAAB4nGPw3sFwIihiIyNjX+QGxp0cDBwMyQUbGVidNjEwMmiBGJu5mBg5ICw+BjCLzWkX0wGgNCeQze60i8EBwmZmcNmowtgRGLHBoSNiI3OKy0Y1EG8XRwMDI4tDR3JIBEhJJBBs5mFi5NHawfi/dQNL70YmBhcADHYj9AAA) format('woff');
+}
+
+.markdown-body {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333333;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body b,
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body sub,
+.markdown-body sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.markdown-body sup {
+  top: -0.5em;
+}
+.markdown-body sub {
+  bottom: -0.25em;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body .codehilitetable,
+.markdown-body .highlighttable {
+  border: 0;
+  border-spacing: 0;
+}
+
+.markdown-body .codehilitetable tr,
+.markdown-body .highlighttable {
+  border: 0;
+}
+
+.markdown-body .codehilitetable pre,
+.markdown-body .codehilitetable div.codehilite,
+.markdown-body .highlighttable pre,
+.markdown-body .highlighttable div.highlight {
+  margin: 0;
+}
+
+.markdown-body .linenos,
+.markdown-body .code,
+.markdown-body .codehilitetable td,
+.markdown-body .highlighttable td {
+  border: 0;
+  padding: 0;
+}
+
+.markdown-body td:not(.linenos) .linenodiv {
+  padding: 0 !important;
+}
+
+.markdown-body .code {
+  width: 100%;
+}
+
+.markdown-body .linenos div pre,
+.markdown-body .linenodiv pre,
+.markdown-body .linenodiv {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.markdown-body .code div pre,
+.markdown-body .code div {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font: 13px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.4;
+}
+
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before,
+.markdown-body hr:after {
+  display: table;
+  content: " ";
+}
+
+.markdown-body hr:after {
+  clear: both;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -moz-linear-gradient(#fefefe, #e7e7e7);
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  border-radius: 2px;
+  border: 1px solid #cfcfcf;
+  color: #000;
+  padding: 3px 5px;
+  line-height: 10px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  display: inline-block;
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body .headerlink {
+  font: normal 400 16px fontawesome-mini;
+  vertical-align: middle;
+  margin-left: -16px;
+  float: left;
+  display: inline-block;
+  text-decoration: none;
+  opacity: 0;
+  color: #333;
+}
+
+.markdown-body .headerlink:focus {
+  outline: none;
+}
+
+.markdown-body h1 .headerlink {
+  margin-top: 0.8rem;
+}
+
+.markdown-body h2 .headerlink,
+.markdown-body h3 .headerlink {
+  margin-top: 0.6rem;
+}
+
+.markdown-body h4 .headerlink {
+  margin-top: 0.2rem;
+}
+
+.markdown-body h5 .headerlink,
+.markdown-body h6 .headerlink {
+  margin-top: 0;
+}
+
+.markdown-body .headerlink:hover,
+.markdown-body h1:hover .headerlink,
+.markdown-body h2:hover .headerlink,
+.markdown-body h3:hover .headerlink,
+.markdown-body h4:hover .headerlink,
+.markdown-body h5:hover .headerlink,
+.markdown-body h6:hover .headerlink {
+  opacity: 1;
+  text-decoration: none;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre,
+.markdown-body .admonition {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body code,
+.markdown-body samp {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .codehilite,
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+
+.markdown-body .codehilite pre,
+.markdown-body .highlight pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .codehilite pre,
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+/* Admonition */
+.markdown-body .admonition {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  position: relative;
+  border-radius: 3px;
+  border: 1px solid #e0e0e0;
+  border-left: 6px solid #333;
+  padding: 10px 10px 10px 30px;
+}
+
+.markdown-body .admonition table {
+  color: #333;
+}
+
+.markdown-body .admonition p {
+  padding: 0;
+}
+
+.markdown-body .admonition-title {
+  font-weight: bold;
+  margin: 0;
+}
+
+.markdown-body .admonition>.admonition-title {
+  color: #333;
+}
+
+.markdown-body .attention>.admonition-title {
+  color: #a6d796;
+}
+
+.markdown-body .caution>.admonition-title {
+  color: #d7a796;
+}
+
+.markdown-body .hint>.admonition-title {
+  color: #96c6d7;
+}
+
+.markdown-body .danger>.admonition-title {
+  color: #c25f77;
+}
+
+.markdown-body .question>.admonition-title {
+  color: #96a6d7;
+}
+
+.markdown-body .note>.admonition-title {
+  color: #d7c896;
+}
+
+.markdown-body .admonition:before,
+.markdown-body .attention:before,
+.markdown-body .caution:before,
+.markdown-body .hint:before,
+.markdown-body .danger:before,
+.markdown-body .question:before,
+.markdown-body .note:before {
+  font: normal normal 16px fontawesome-mini;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 1.5;
+  color: #333;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.markdown-body .admonition:before {
+  content: "\f056\00a0";
+  color: 333;
+}
+
+.markdown-body .attention:before {
+  content: "\f058\00a0";
+  color: #a6d796;
+}
+
+.markdown-body .caution:before {
+  content: "\f06a\00a0";
+  color: #d7a796;
+}
+
+.markdown-body .hint:before {
+  content: "\f05a\00a0";
+  color: #96c6d7;
+}
+
+.markdown-body .danger:before {
+  content: "\f057\00a0";
+  color: #c25f77;
+}
+
+.markdown-body .question:before {
+  content: "\f059\00a0";
+  color: #96a6d7;
+}
+
+.markdown-body .note:before {
+  content: "\f040\00a0";
+  color: #d7c896;
+}
+
+.markdown-body .admonition::after {
+  content: normal;
+}
+
+.markdown-body .attention {
+  border-left: 6px solid #a6d796;
+}
+
+.markdown-body .caution {
+  border-left: 6px solid #d7a796;
+}
+
+.markdown-body .hint {
+  border-left: 6px solid #96c6d7;
+}
+
+.markdown-body .danger {
+  border-left: 6px solid #c25f77;
+}
+
+.markdown-body .question {
+  border-left: 6px solid #96a6d7;
+}
+
+.markdown-body .note {
+  border-left: 6px solid #d7c896;
+}
+
+.markdown-body .admonition>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body .admonition>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* progress bar*/
+.markdown-body .progress {
+  display: block;
+  width: 300px;
+  margin: 10px 0;
+  height: 24px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #ededed;
+  position: relative;
+  box-shadow: inset -1px 1px 3px rgba(0, 0, 0, .1);
+}
+
+.markdown-body .progress-label {
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  width: 100%; margin: 0;
+  line-height: 24px;
+  color: #333;
+  text-shadow: 1px 1px 0 #fefefe, -1px -1px 0 #fefefe, -1px 1px 0 #fefefe, 1px -1px 0 #fefefe, 0 1px 0 #fefefe, 0 -1px 0 #fefefe, 1px 0 0 #fefefe, -1px 0 0 #fefefe, 1px 1px 2px #000;
+  -webkit-font-smoothing: antialiased !important;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.markdown-body .progress-bar {
+  height: 24px;
+  float: left;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #96c6d7;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 -1px 0 rgba(0, 0, 0, .1);
+  background-size: 30px 30px;
+  background-image: -webkit-linear-gradient(
+    135deg, rgba(255, 255, 255, .4) 27%,
+    transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%,
+    transparent 77%, transparent
+  );
+  background-image: -moz-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -ms-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -o-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+}
+
+.markdown-body .progress-100plus .progress-bar {
+  background-color: #a6d796;
+}
+
+.markdown-body .progress-80plus .progress-bar {
+  background-color: #c6d796;
+}
+
+.markdown-body .progress-60plus .progress-bar {
+  background-color: #d7c896;
+}
+
+.markdown-body .progress-40plus .progress-bar {
+  background-color: #d7a796;
+}
+
+.markdown-body .progress-20plus .progress-bar {
+  background-color: #d796a6;
+}
+
+.markdown-body .progress-0plus .progress-bar {
+  background-color: #c25f77;
+}
+
+.markdown-body .candystripe-animate .progress-bar{
+  -webkit-animation: animate-stripes 3s linear infinite;
+  -moz-animation: animate-stripes 3s linear infinite;
+  animation: animate-stripes 3s linear infinite;
+}
+
+@-webkit-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@-moz-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+.markdown-body .gloss .progress-bar {
+  box-shadow:
+    inset 0 4px 12px rgba(255, 255, 255, .7),
+    inset 0 -12px 0 rgba(0, 0, 0, .05);
+}
+
+/* MultiMarkdown Critic Blocks */
+.markdown-body .critic_mark {
+  background: #ff0;
+}
+
+.markdown-body .critic_delete {
+  color: #c82829;
+  text-decoration: line-through;
+}
+
+.markdown-body .critic_insert {
+  color: #718c00 ;
+  text-decoration: underline;
+}
+
+.markdown-body .critic_comment {
+  color: #8e908c;
+  font-style: italic;
+}
+
+.markdown-body .headeranchor {
+  font: normal normal 16px fontawesome-mini;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.headeranchor:before {
+  content: '\e157';
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 4px 0.25em -20px;
+  vertical-align: middle;
+}
+
+/* Media */
+@media only screen and (min-width: 480px) {
+  .markdown-body {
+    font-size:14px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .markdown-body {
+    font-size:16px;
+  }
+}
+
+@media print {
+  .markdown-body * {
+    background: transparent !important;
+    color: black !important;
+    filter:none !important;
+    -ms-filter: none !important;
+  }
+
+  .markdown-body {
+    font-size:12pt;
+    max-width:100%;
+    outline:none;
+    border: 0;
+  }
+
+  .markdown-body a,
+  .markdown-body a:visited {
+    text-decoration: underline;
+  }
+
+  .markdown-body .headeranchor-link {
+    display: none;
+  }
+
+  .markdown-body a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  .markdown-body abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .markdown-body .ir a:after,
+  .markdown-body a[href^="javascript:"]:after,
+  .markdown-body a[href^="#"]:after {
+    content: "";
+  }
+
+  .markdown-body pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .markdown-body pre,
+  .markdown-body blockquote {
+    border: 1px solid #999;
+    padding-right: 1em;
+    page-break-inside: avoid;
+  }
+
+  .markdown-body .progress,
+  .markdown-body .progress-bar {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .markdown-body .progress {
+    border: 1px solid #ddd;
+  }
+
+  .markdown-body .progress-bar {
+    height: 22px;
+    border-right: 1px solid #ddd;
+  }
+
+  .markdown-body tr,
+  .markdown-body img {
+    page-break-inside: avoid;
+  }
+
+  .markdown-body img {
+    max-width: 100% !important;
+  }
+
+  .markdown-body p,
+  .markdown-body h2,
+  .markdown-body h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .markdown-body h2,
+  .markdown-body h3 {
+    page-break-after: avoid;
+  }
+}
+</style><style>/*GitHub*/
+.highlight {background-color:#fff;color:#333333;}
+.highlight .hll {background-color:#ffffcc;}
+.highlight .c{color:#999988;font-style:italic}
+.highlight .err{color:#a61717;background-color:#e3d2d2}
+.highlight .k{font-weight:bold}
+.highlight .o{font-weight:bold}
+.highlight .cm{color:#999988;font-style:italic}
+.highlight .cp{color:#999999;font-weight:bold}
+.highlight .c1{color:#999988;font-style:italic}
+.highlight .cs{color:#999999;font-weight:bold;font-style:italic}
+.highlight .gd{color:#000000;background-color:#ffdddd}
+.highlight .ge{font-style:italic}
+.highlight .gr{color:#aa0000}
+.highlight .gh{color:#999999}
+.highlight .gi{color:#000000;background-color:#ddffdd}
+.highlight .go{color:#888888}
+.highlight .gp{color:#555555}
+.highlight .gs{font-weight:bold}
+.highlight .gu{color:#800080;font-weight:bold}
+.highlight .gt{color:#aa0000}
+.highlight .kc{font-weight:bold}
+.highlight .kd{font-weight:bold}
+.highlight .kn{font-weight:bold}
+.highlight .kp{font-weight:bold}
+.highlight .kr{font-weight:bold}
+.highlight .kt{color:#445588;font-weight:bold}
+.highlight .m{color:#009999}
+.highlight .s{color:#dd1144}
+.highlight .n{color:#333333}
+.highlight .na{color:teal}
+.highlight .nb{color:#0086b3}
+.highlight .nc{color:#445588;font-weight:bold}
+.highlight .no{color:teal}
+.highlight .ni{color:purple}
+.highlight .ne{color:#990000;font-weight:bold}
+.highlight .nf{color:#990000;font-weight:bold}
+.highlight .nn{color:#555555}
+.highlight .nt{color:navy}
+.highlight .nv{color:teal}
+.highlight .ow{font-weight:bold}
+.highlight .w{color:#bbbbbb}
+.highlight .mf{color:#009999}
+.highlight .mh{color:#009999}
+.highlight .mi{color:#009999}
+.highlight .mo{color:#009999}
+.highlight .sb{color:#dd1144}
+.highlight .sc{color:#dd1144}
+.highlight .sd{color:#dd1144}
+.highlight .s2{color:#dd1144}
+.highlight .se{color:#dd1144}
+.highlight .sh{color:#dd1144}
+.highlight .si{color:#dd1144}
+.highlight .sx{color:#dd1144}
+.highlight .sr{color:#009926}
+.highlight .s1{color:#dd1144}
+.highlight .ss{color:#990073}
+.highlight .bp{color:#999999}
+.highlight .vc{color:teal}
+.highlight .vg{color:teal}
+.highlight .vi{color:teal}
+.highlight .il{color:#009999}
+.highlight .gc{color:#999;background-color:#EAF2F5}
+</style><title>Studensts1</title></head><body><article class="markdown-body"><h1 id="learn-sql-by-building-a-student-database-part-1">Learn SQL by Building a Student Database: Part 1<a class="headerlink" href="#learn-sql-by-building-a-student-database-part-1" title="Permanent link"></a></h1>
+<blockquote>
+<p>Welcome to the SQL Lessons!</p>
+</blockquote>
+<h2 id="10-start-the-terminal">10. Start the Terminal<a class="headerlink" href="#10-start-the-terminal" title="Permanent link"></a></h2>
+<h3 id="101">10.1<a class="headerlink" href="#101" title="Permanent link"></a></h3>
+<p><strong>The first thing you need to do is start the terminal.</strong> Do that by clicking the &ldquo;hamburger&rdquo; menu at the top left of the screen, going to the &ldquo;terminal&rdquo; section, and clicking &ldquo;new terminal&rdquo;. Once you open a new one, type <code>echo hello SQL</code> into the terminal and press enter.</p>
+<h4 id="hints">HINTS<a class="headerlink" href="#hints" title="Permanent link"></a></h4>
+<ul>
+<li>Capitalization matters</li>
+<li>If the tests don&rsquo;t run automatically, try typing <code>exit</code> into the terminal and redoing the instructions</li>
+</ul>
+<h2 id="20-psql-login">20. psql login<a class="headerlink" href="#20-psql-login" title="Permanent link"></a></h2>
+<h3 id="201">20.1<a class="headerlink" href="#201" title="Permanent link"></a></h3>
+<p>You are started with two <code>.csv</code> files with info about your computer science students. You should take a look at them. The top row in each file has titles, and the rest are values for those titles. You will be adding all that info to a PostgreSQL database. Log into the psql interactive terminal with <code>psql --username=freecodecamp --dbname=postgres</code> to get started.</p>
+<h4 id="hints_1">HINTS<a class="headerlink" href="#hints_1" title="Permanent link"></a></h4>
+<ul>
+<li>Type <code>psql --username=freecodecamp --dbname=postgres</code> into the terminal and press enter</li>
+</ul>
+<h2 id="30-l">30. \l<a class="headerlink" href="#30-l" title="Permanent link"></a></h2>
+<h3 id="301">30.1<a class="headerlink" href="#301" title="Permanent link"></a></h3>
+<p>View the existing databases with the <code>\l</code> shortcut command to see what&rsquo;s here.</p>
+<h4 id="hints_2">HINTS<a class="headerlink" href="#hints_2" title="Permanent link"></a></h4>
+<ul>
+<li>Type <code>\l</code> into the psql prompt and press enter</li>
+</ul>
+<h2 id="40-create-database-students">40. CREATE DATABASE students;<a class="headerlink" href="#40-create-database-students" title="Permanent link"></a></h2>
+<h3 id="401">40.1<a class="headerlink" href="#401" title="Permanent link"></a></h3>
+<p>All the info from the CSV files will go into a single database. Create a new database named <code>students</code>.</p>
+<h4 id="hints_3">HINTS<a class="headerlink" href="#hints_3" title="Permanent link"></a></h4>
+<ul>
+<li>Use the <code>CREATE DATABASE</code> keywords</li>
+<li>Here&rsquo;s an example: <code>CREATE DATABASE &lt;database_name&gt;;</code></li>
+<li>Type <code>CREATE DATABASE students;</code> into the psql prompt and press enter</li>
+</ul>
+<h2 id="50-l">50. \l<a class="headerlink" href="#50-l" title="Permanent link"></a></h2>
+<h3 id="501">50.1<a class="headerlink" href="#501" title="Permanent link"></a></h3>
+<p>View the databases again to make sure it got created.</p>
+<h4 id="hints_4">HINTS<a class="headerlink" href="#hints_4" title="Permanent link"></a></h4>
+<ul>
+<li>Use the <strong>list</strong> shortcut command in the psql prompt</li>
+<li>Type <code>\l</code> into the psql prompt and press enter</li>
+</ul>
+<h2 id="60-c-students">60. \c students<a class="headerlink" href="#60-c-students" title="Permanent link"></a></h2>
+<h3 id="601">60.1<a class="headerlink" href="#601" title="Permanent link"></a></h3>
+<p>There it is. Connect to your new database so you can start adding tables.</p>
+<h4 id="hints_5">HINTS<a class="headerlink" href="#hints_5" title="Permanent link"></a></h4>
+<ul>
+<li>Use the <code>\c</code> shortcut command</li>
+<li>Here&rsquo;s an example: <code>\c &lt;database_name&gt;</code></li>
+<li>Type <code>\c students</code> in the psql prompt</li>
+</ul>
+<h2 id="70-create-table-students">70. CREATE TABLE students<a class="headerlink" href="#70-create-table-students" title="Permanent link"></a></h2>
+<h3 id="701">70.1<a class="headerlink" href="#701" title="Permanent link"></a></h3>
+<p>The CSV files have a bunch of students with info about them, and some courses and majors. You will have four tables. One for the students and their info, one for each major, another for each course, and a final one for showing what courses are included in each major. First, create the <code>students</code> table.</p>
+<h4 id="hints_6">HINTS<a class="headerlink" href="#hints_6" title="Permanent link"></a></h4>
+<ul>
+<li>Use the <code>CREATE TABLE</code> keywords</li>
+<li>There should be parenthesis after the table name</li>
+<li>Here&rsquo;s an example: <code>CREATE TABLE &lt;table_name&gt;();</code></li>
+<li>Type <code>CREATE TABLE students();</code> into the psql prompt</li>
+</ul>
+<h2 id="80-create-table-majors">80. CREATE TABLE majors<a class="headerlink" href="#80-create-table-majors" title="Permanent link"></a></h2>
+<h3 id="801">80.1<a class="headerlink" href="#801" title="Permanent link"></a></h3>
+<p>The second table will be for each unique major that appears in the data. Create a table named <code>majors</code>.</p>
+<h4 id="hints_7">HINTS<a class="headerlink" href="#hints_7" title="Permanent link"></a></h4>
+<ul>
+<li>Use the <code>CREATE TABLE</code> keywords</li>
+<li>There should be parenthesis after the table name</li>
+<li>Here&rsquo;s an example: <code>CREATE TABLE &lt;table_name&gt;();</code></li>
+<li>Type <code>CREATE TABLE majors();</code> into the psql prompt</li>
+</ul>
+<h2 id="90-create-table-courses">90. CREATE TABLE courses<a class="headerlink" href="#90-create-table-courses" title="Permanent link"></a></h2>
+<h3 id="901">90.1<a class="headerlink" href="#901" title="Permanent link"></a></h3>
+<p>The third table is for each unique course in the data. Create another table named <code>courses</code>.</p>
+<h4 id="hints_8">HINTS<a class="headerlink" href="#hints_8" title="Permanent link"></a></h4>
+<ul>
+<li>Use the <code>CREATE TABLE</code> keywords</li>
+<li>There should be parenthesis after the table name</li>
+<li>Here&rsquo;s an example: <code>CREATE TABLE &lt;table_name&gt;();</code></li>
+<li>Type <code>CREATE TABLE courses();</code> into the psql prompt</li>
+</ul>
+<h2 id="100-create-table-majors_courses">100. CREATE TABLE majors_courses<a class="headerlink" href="#100-create-table-majors_courses" title="Permanent link"></a></h2>
+<h3 id="1001">100.1<a class="headerlink" href="#1001" title="Permanent link"></a></h3>
+<p>The final table will be a junction table for the majors and courses. Create it with the name <code>majors_courses</code>.</p>
+<h4 id="hints_9">HINTS<a class="headerlink" href="#hints_9" title="Permanent link"></a></h4>
+<ul>
+<li>Use the <code>CREATE TABLE</code> keywords</li>
+<li>There should be parenthesis after the table name</li>
+<li>Here&rsquo;s an example: <code>CREATE TABLE &lt;table_name&gt;();</code></li>
+<li>Type <code>CREATE TABLE majors_courses();</code> into the psql prompt</li>
+</ul>
+<h2 id="110-d">110. \d<a class="headerlink" href="#110-d" title="Permanent link"></a></h2>
+<h3 id="1101">110.1<a class="headerlink" href="#1101" title="Permanent link"></a></h3>
+<p>Use the <strong>d</strong>isplay shortcut command to view your tables to make sure your satisfied with them.</p>
+<h4 id="hints_10">HINTS<a class="headerlink" href="#hints_10" title="Permanent link"></a></h4>
+<ul>
+<li>It&rsquo;s the <code>\d</code> shortcut command</li>
+<li>Type <code>\d</code> in the psql prompt</li>
+</ul>
+<h2 id="120-create-student_id-column">120. Create student_id Column<a class="headerlink" href="#120-create-student_id-column" title="Permanent link"></a></h2>
+<h3 id="1201">120.1<a class="headerlink" href="#1201" title="Permanent link"></a></h3>
+<p>Onto the columns. The <code>students.csv</code> file has four fields, you will make a column for each of those as well as an ID column. Add a column to your <code>students</code> table named <code>student_id</code>. Give it a type of <code>SERIAL</code> so it automatically increments and make it a <code>PRIMARY KEY</code></p>
+<h4 id="hints_11">HINTS<a class="headerlink" href="#hints_11" title="Permanent link"></a></h4>
+<ul>
+<li>Use the <code>ALTER TABLE</code>, <code>ADD COLUMN</code>, <code>SERIAL</code> and <code>PRIMARY KEY</code> keywords</li>
+<li>Here&rsquo;s an example: <code>ALTER TABLE &lt;table_name&gt; ADD COLUMN &lt;column_name&gt; &lt;TYPE&gt; &lt;CONSTRAINTS&gt;;</code></li>
+<li>Type <code>ALTER TABLE students ADD COLUMN student_id SERIAL PRIMARY KEY;</code> into the psql prompt</li>
+<li>You can drop a column with <code>ALTER TABLE &lt;table_name&gt; DROP COLUMN &lt;column_name&gt;;</code> if you want to delete a column and try again</li>
+</ul>
+<h2 id="130-create-first_name-column">130. Create first_name Column<a class="headerlink" href="#130-create-first_name-column" title="Permanent link"></a></h2>
+<h3 id="1301">130.1<a class="headerlink" href="#1301" title="Permanent link"></a></h3>
+<p>The first column in <code>students.csv</code> is <code>first_name</code>. Add a column to the <code>students</code> table with that name. Make it a type of <code>VARCHAR(50)</code> and give it the <code>NOT NULL</code> constraint.</p>
+<h4 id="hints_12">HINTS<a class="headerlink" href="#hints_12" title="Permanent link"></a></h4>
+<ul>
+<li>Use the <code>ALTER TABLE</code>, <code>ADD COLUMN</code>, <code>VARCHAR()</code> and <code>NOT NULL</code> keywords</li>
+<li>Here&rsquo;s an example: <code>ALTER TABLE &lt;table_name&gt; ADD COLUMN &lt;column_name&gt; &lt;DATA_TYPE&gt; &lt;CONSTRAINTS&gt;;</code></li>
+<li>Type <code>ALTER TABLE students ADD COLUMN first_name VARCHAR(50) NOT NULL;</code> into the psql prompt</li>
+<li>You can drop a column with <code>ALTER TABLE &lt;table_name&gt; DROP COLUMN &lt;column_name&gt;;</code> if you want to delete a column and try again</li>
+</ul>
+<h2 id="140-create-last_name-column">140. Create last_name Column<a class="headerlink" href="#140-create-last_name-column" title="Permanent link"></a></h2>
+<h3 id="1401">140.1<a class="headerlink" href="#1401" title="Permanent link"></a></h3>
+<p>The next column in the data is <code>last_name</code>. Add it to the <code>students</code> table. Give it the same data type and max-length as <code>first_name</code> and make sure it has the <code>NOT NULL</code> constraint.</p>
+<h4 id="hints_13">HINTS<a class="headerlink" href="#hints_13" title="Permanent link"></a></h4>
+<ul>
+<li>Use the <code>ALTER TABLE</code>, <code>ADD COLUMN</code>, <code>VARCHAR()</code> and <code>NOT NULL</code> keywords</li>
+<li>The max-length should be <code>50</code></li>
+<li>Here&rsquo;s an example: <code>ALTER TABLE &lt;table_name&gt; ADD COLUMN &lt;column_name&gt; &lt;DATA_TYPE&gt; &lt;CONSTRAINTS&gt;;</code></li>
+<li>Type <code>ALTER TABLE students ADD COLUMN last_name VARCHAR(50) NOT NULL;</code> into the psql prompt</li>
+<li>You can drop a column with <code>ALTER TABLE &lt;table_name&gt; DROP COLUMN &lt;column_name&gt;;</code> if you want to delete a column and try again</li>
+</ul>
+<h2 id="143-create-major_id-column">143. Create major_id Column<a class="headerlink" href="#143-create-major_id-column" title="Permanent link"></a></h2>
+<h3 id="1431">143.1<a class="headerlink" href="#1431" title="Permanent link"></a></h3>
+<p>The next column is for the major. Since you will have each major in another table this column will be a foreign key that references it. Create a column in the <code>students</code> table named <code>major_id</code>, give it a data type of <code>INT</code> for now. You will come back and set the foreign key later.</p>
+<h4 id="hints_14">HINTS<a class="headerlink" href="#hints_14" title="Permanent link"></a></h4>
+<ul>
+<li>Use the <code>ALTER TABLE</code>, <code>ADD COLUMN</code>, and <code>INT</code> keywords</li>
+<li>Here&rsquo;s an example: <code>ALTER TABLE &lt;table_name&gt; ADD COLUMN &lt;column_name&gt; &lt;DATA_TYPE&gt;;</code></li>
+<li>Type <code>ALTER TABLE students ADD COLUMN major_id INT;</code> into the psql prompt</li>
+<li>You can drop a column with <code>ALTER TABLE &lt;table_name&gt; DROP COLUMN &lt;column_name&gt;;</code> if you want to delete a column and try again</li>
+</ul>
+<h2 id="146-create-gpa-column">146. Create gpa Column<a class="headerlink" href="#146-create-gpa-column" title="Permanent link"></a></h2>
+<h3 id="1461">146.1<a class="headerlink" href="#1461" title="Permanent link"></a></h3>
+<p>Create the last column, <code>gpa</code>. The data in the CSV shows that they are decimals with a length of <code>2</code> and <code>1</code> number is to the right of the decimal. So give it a data type of <code>NUMERIC(2,1)</code>.</p>
+<h4 id="hints_15">HINTS<a class="headerlink" href="#hints_15" title="Permanent link"></a></h4>
+<ul>
+<li>Use the <code>ALTER TABLE</code>, <code>ADD COLUMN</code>, and <code>NUMERIC()</code> keywords</li>
+<li>Here&rsquo;s an example: <code>ALTER TABLE &lt;table_name&gt; ADD COLUMN &lt;column_name&gt; &lt;DATA_TYPE&gt;;</code></li>
+<li>Type <code>ALTER TABLE students ADD COLUMN gpa NUMERIC(2,1);</code> into the psql prompt</li>
+<li>You can drop a column with <code>ALTER TABLE &lt;table_name&gt; DROP COLUMN &lt;column_name&gt;;</code> if you want to delete a column and try again</li>
+</ul>
+<h2 id="150-d-students">150. \d students<a class="headerlink" href="#150-d-students" title="Permanent link"></a></h2>
+<h3 id="1501">150.1<a class="headerlink" href="#1501" title="Permanent link"></a></h3>
+<p>Use the shortcut command to <strong>d</strong>isplay the details of the <code>students</code> table to make sure you like it.</p>
+<h4 id="hints_16">HINTS<a class="headerlink" href="#hints_16" title="Permanent link"></a></h4>
+<ul>
+<li>It&rsquo;s the <code>\d</code> shortcut command</li>
+<li>Add the table name after the command</li>
+<li>Here&rsquo;s an example: <code>\d &lt;table_name&gt;</code></li>
+<li>Type <code>\d students</code> in the psql prompt</li>
+</ul>
+<h2 id="160-create-major_id-column">160. Create major_id Column<a class="headerlink" href="#160-create-major_id-column" title="Permanent link"></a></h2>
+<h3 id="1601">160.1<a class="headerlink" href="#1601" title="Permanent link"></a></h3>
+<p>The foreign key is still missing. Let&rsquo;s fill in the <code>majors</code> table next. Add a <code>major_id</code> column to it. Make it a type of <code>SERIAL</code> and the <code>PRIMARY KEY</code> for this table.</p>
+<h4 id="hints_17">HINTS<a class="headerlink" href="#hints_17" title="Permanent link"></a></h4>
+<ul>
+<li>Use the <code>ALTER TABLE</code>, <code>ADD COLUMN</code>, <code>SERIAL</code> and <code>PRIMARY KEY</code> keywords</li>
+<li>Here&rsquo;s an example: <code>ALTER TABLE &lt;table_name&gt; ADD COLUMN &lt;column_name&gt; &lt;TYPE&gt; &lt;CONSTRAINTS&gt;;</code></li>
+<li>Type <code>ALTER TABLE majors ADD COLUMN major_id SERIAL PRIMARY KEY;</code> into the psql prompt</li>
+<li>You can drop a column with <code>ALTER TABLE &lt;table_name&gt; DROP COLUMN &lt;column_name&gt;;</code> if you want to delete a column and try again</li>
+</ul>
+<h2 id="170-create-major-column">170. Create major Column<a class="headerlink" href="#170-create-major-column" title="Permanent link"></a></h2>
+<h3 id="1701">170.1<a class="headerlink" href="#1701" title="Permanent link"></a></h3>
+<p>This table will only have one other column for the name of the major. Add a column to it named <code>major</code>. Make it a <code>VARCHAR</code> with a max-length of <code>50</code> and give it the <code>NOT NULL</code> constraint.</p>
+<h4 id="hints_18">HINTS<a class="headerlink" href="#hints_18" title="Permanent link"></a></h4>
+<ul>
+<li>Use the <code>ALTER TABLE</code>, <code>ADD COLUMN</code>, <code>VARCHAR()</code> and <code>NOT NULL</code> keywords</li>
+<li>The max-length of <code>50</code> should go in the parenthesis of <code>VARCHAR</code></li>
+<li>Here&rsquo;s an example: <code>ALTER TABLE &lt;table_name&gt; ADD COLUMN &lt;column_name&gt; &lt;DATA_TYPE&gt; &lt;CONSTRAINTS&gt;;</code></li>
+<li>Type <code>ALTER TABLE majors ADD COLUMN major VARCHAR(50) NOT NULL;</code> into the psql prompt</li>
+<li>You can drop a column with <code>ALTER TABLE &lt;table_name&gt; DROP COLUMN &lt;column_name&gt;;</code> if you want to delete a column and try again</li>
+</ul>
+<h2 id="180-d-majors">180. \d majors<a class="headerlink" href="#180-d-majors" title="Permanent link"></a></h2>
+<h3 id="1801">180.1<a class="headerlink" href="#1801" title="Permanent link"></a></h3>
+<p>View the details of the majors table to make sure you like it.</p>
+<h4 id="hints_19">HINTS<a class="headerlink" href="#hints_19" title="Permanent link"></a></h4>
+<ul>
+<li>Use the <strong>d</strong>isplay shortcut command</li>
+<li>Add the table name after the command</li>
+<li>It&rsquo;s the <code>\d</code> command</li>
+<li>Here&rsquo;s an example: <code>\d &lt;table_name&gt;</code></li>
+<li>Type <code>\d majors</code> into the psql prompt</li>
+</ul>
+<h2 id="183-create-major_id-foreign-key">183. Create major_id foreign key<a class="headerlink" href="#183-create-major_id-foreign-key" title="Permanent link"></a></h2>
+<h3 id="1831">183.1<a class="headerlink" href="#1831" title="Permanent link"></a></h3>
+<p>This table looks good. Now, set the <code>major_id</code> column from the <code>students</code> table as a foreign key that references the <code>major_id</code> column from the <code>majors</code> table. Here&rsquo;s an example of how to do that: <code>ALTER TABLE &lt;table_name&gt; ADD FOREIGN KEY(&lt;column_name&gt;) REFERENCES &lt;referenced_table_name&gt;(&lt;referenced_column_name&gt;);</code></p>
+<h4 id="hints_20">HINTS<a class="headerlink" href="#hints_20" title="Permanent link"></a></h4>
+<ul>
+<li>Type <code>ALTER TABLE students ADD FOREIGN KEY(major_id) REFERENCES majors(major_id);</code> in the psql prompt</li>
+</ul>
+<h2 id="187-d-students">187. \d students<a class="headerlink" href="#187-d-students" title="Permanent link"></a></h2>
+<h3 id="1871">187.1<a class="headerlink" href="#1871" title="Permanent link"></a></h3>
+<p>View the details of the <code>students</code> table again to make sure the key is there.</p>
+<h4 id="hints_21">HINTS<a class="headerlink" href="#hints_21" title="Permanent link"></a></h4>
+<ul>
+<li>Use the <strong>d</strong>isplay shortcut command</li>
+<li>Add the table name after the command</li>
+<li>It&rsquo;s the <code>\d</code> command</li>
+<li>Here&rsquo;s an example: <code>\d &lt;table_name&gt;</code></li>
+<li>Type <code>\d students</code> into the psql prompt</li>
+</ul>
+<h2 id="190-create-course_id-column">190. Create course_id Column<a class="headerlink" href="#190-create-course_id-column" title="Permanent link"></a></h2>
+<h3 id="1901">190.1<a class="headerlink" href="#1901" title="Permanent link"></a></h3>
+<p>Next, is the <code>courses</code> table. Add a <code>course_id</code> column to it. Give it a type of <code>SERIAL</code> and make it the primary key.</p>
+<h4 id="hints_22">HINTS<a class="headerlink" href="#hints_22" title="Permanent link"></a></h4>
+<ul>
+<li>Use the <code>ALTER TABLE</code>, <code>ADD COLUMN</code>, <code>SERIAL</code> and <code>PRIMARY KEY</code> keywords</li>
+<li>Here&rsquo;s an example: <code>ALTER TABLE &lt;table_name&gt; ADD COLUMN &lt;column_name&gt; &lt;TYPE&gt; &lt;CONSTRAINTS&gt;;</code></li>
+<li>Type <code>ALTER TABLE courses ADD COLUMN course_id SERIAL PRIMARY KEY;</code> into the psql prompt</li>
+<li>You can drop a column with <code>ALTER TABLE &lt;table_name&gt; DROP COLUMN &lt;column_name&gt;;</code> if you want to delete a column and try again</li>
+</ul>
+<h2 id="200-create-course-column">200. Create course Column<a class="headerlink" href="#200-create-course-column" title="Permanent link"></a></h2>
+<h3 id="2001">200.1<a class="headerlink" href="#2001" title="Permanent link"></a></h3>
+<p>Add a <code>course</code> column to the <code>courses</code> table that&rsquo;s a type of <code>VARCHAR</code>. The course names are a little longer, so give them a max-length of <code>100</code>. Also, make sure it can&rsquo;t accept null values.</p>
+<h4 id="hints_23">HINTS<a class="headerlink" href="#hints_23" title="Permanent link"></a></h4>
+<ul>
+<li>Use the <code>ALTER TABLE</code>, <code>ADD COLUMN</code>, <code>VARCHAR()</code> and <code>NOT NULL</code> keywords</li>
+<li>The max-length of <code>100</code> should go in the parenthesis of <code>VARCHAR</code></li>
+<li>Here&rsquo;s an example: <code>ALTER TABLE &lt;table_name&gt; ADD COLUMN &lt;column_name&gt; &lt;DATA_TYPE&gt; &lt;CONSTRAINTS&gt;;</code></li>
+<li>Type <code>ALTER TABLE courses ADD COLUMN course VARCHAR(100) NOT NULL;</code> into the psql prompt</li>
+<li>You can drop a column with <code>ALTER TABLE &lt;table_name&gt; DROP COLUMN &lt;column_name&gt;;</code> if you want to delete a column and try again</li>
+</ul>
+<h2 id="220-d-courses">220. \d courses<a class="headerlink" href="#220-d-courses" title="Permanent link"></a></h2>
+<h3 id="2201">220.1<a class="headerlink" href="#2201" title="Permanent link"></a></h3>
+<p>View the details of the courses table to make sure it looks good.</p>
+<h4 id="hints_24">HINTS<a class="headerlink" href="#hints_24" title="Permanent link"></a></h4>
+<ul>
+<li>Use the <strong>d</strong>isplay shortcut command</li>
+<li>Add the table name after the command</li>
+<li>It&rsquo;s the <code>\d</code> command</li>
+<li>Here&rsquo;s an example: <code>\d &lt;table_name&gt;</code></li>
+<li>Type <code>\d courses</code> into the psql prompt</li>
+</ul>
+<h2 id="230-create-major_id-column">230. Create major_id column<a class="headerlink" href="#230-create-major_id-column" title="Permanent link"></a></h2>
+<h3 id="2301">230.1<a class="headerlink" href="#2301" title="Permanent link"></a></h3>
+<p>One more table to go. The <code>majors_courses</code> junction table will have two columns, each referencing the primary key from two related table. First, add a <code>major_id</code> column to it. Just give it a type of <code>INT</code> for now.</p>
+<h4 id="hints_25">HINTS<a class="headerlink" href="#hints_25" title="Permanent link"></a></h4>
+<ul>
+<li>Use the <code>ALTER TABLE</code>, <code>ADD COLUMN</code>, and <code>INT</code> keywords</li>
+<li>Here&rsquo;s an example: <code>ALTER TABLE &lt;table_name&gt; ADD COLUMN &lt;column_name&gt; &lt;DATA_TYPE&gt;;</code></li>
+<li>Type <code>ALTER TABLE majors_courses ADD COLUMN major_id INT;</code> into the psql prompt</li>
+<li>You can drop a column with <code>ALTER TABLE &lt;table_name&gt; DROP COLUMN &lt;column_name&gt;;</code> if you want to delete a column and try again</li>
+</ul>
+<h2 id="240-set-major_id-foreign-key">240. Set major_id Foreign Key<a class="headerlink" href="#240-set-major_id-foreign-key" title="Permanent link"></a></h2>
+<h3 id="2401">240.1<a class="headerlink" href="#2401" title="Permanent link"></a></h3>
+<p>Set the <code>major_id</code> column you just created as a foreign key that references the <code>major_id</code> column from the <code>majors</code> table.</p>
+<h4 id="hints_26">HINTS<a class="headerlink" href="#hints_26" title="Permanent link"></a></h4>
+<ul>
+<li>Use the <code>ALTER TABLE</code>, <code>ADD FOREIGN KEY</code>, and <code>REFERENCES</code> keywords</li>
+<li>Here&rsquo;s an example: <code>ALTER TABLE &lt;table_name&gt; ADD FOREIGN KEY(&lt;column_name&gt;) REFERENCES &lt;referenced_table_name&gt;(&lt;referenced_column_name&gt;);</code></li>
+<li>You previously used: <code>ALTER TABLE students ADD FOREIGN KEY(major_id) REFERENCES majors(major_id);</code></li>
+<li>Type <code>ALTER TABLE majors_courses ADD FOREIGN KEY(major_id) REFERENCES majors(major_id);</code> into the psql prompt</li>
+</ul>
+<h2 id="250-create-course_id-column">250. Create course_id Column<a class="headerlink" href="#250-create-course_id-column" title="Permanent link"></a></h2>
+<h3 id="2501">250.1<a class="headerlink" href="#2501" title="Permanent link"></a></h3>
+<p>Next, add a <code>course_id</code> column to the same table. Just give it a type of <code>INT</code> again for now.</p>
+<h4 id="hints_27">HINTS<a class="headerlink" href="#hints_27" title="Permanent link"></a></h4>
+<ul>
+<li>It goes in the <code>majors_courses</code> table</li>
+<li>Use the <code>ALTER TABLE</code>, <code>ADD COLUMN</code>, and <code>INT</code> keywords</li>
+<li>Here&rsquo;s an example: <code>ALTER TABLE &lt;table_name&gt; ADD COLUMN &lt;column_name&gt; &lt;DATA_TYPE&gt;;</code></li>
+<li>Type <code>ALTER TABLE majors_courses ADD COLUMN course_id INT;</code> into the psql prompt</li>
+<li>You can drop a column with <code>ALTER TABLE &lt;table_name&gt; DROP COLUMN &lt;column_name&gt;;</code> if you want to delete a column and try again</li>
+</ul>
+<h2 id="260-set-course_id-foreign-key">260. Set course_id Foreign Key<a class="headerlink" href="#260-set-course_id-foreign-key" title="Permanent link"></a></h2>
+<h3 id="2601">260.1<a class="headerlink" href="#2601" title="Permanent link"></a></h3>
+<p>Set your new <code>course_id</code> column as a foreign key that references the other <code>course_id</code> column.</p>
+<h4 id="hints_28">HINTS<a class="headerlink" href="#hints_28" title="Permanent link"></a></h4>
+<ul>
+<li>The referenced column is <code>course_id</code> from the <code>courses</code> table</li>
+<li>Use the <code>ALTER TABLE</code>, <code>ADD FOREIGN KEY</code>, and <code>REFERENCES</code> keywords</li>
+<li>Here&rsquo;s an example: <code>ALTER TABLE &lt;table_name&gt; ADD FOREIGN KEY(&lt;column_name&gt;) REFERENCES &lt;referenced_table_name&gt;(&lt;referenced_column_name&gt;);</code></li>
+<li>You previously used: <code>ALTER TABLE students ADD FOREIGN KEY(major_id) REFERENCES majors(major_id);</code></li>
+<li>Type <code>ALTER TABLE majors_courses ADD FOREIGN KEY(course_id) REFERENCES courses(course_id);</code> into the psql prompt</li>
+</ul>
+<h2 id="270-d-majors_courses">270. \d majors_courses<a class="headerlink" href="#270-d-majors_courses" title="Permanent link"></a></h2>
+<h3 id="2701">270.1<a class="headerlink" href="#2701" title="Permanent link"></a></h3>
+<p>View the details of the table you just worked on to make sure the structure is finished.</p>
+<h4 id="hints_29">HINTS<a class="headerlink" href="#hints_29" title="Permanent link"></a></h4>
+<ul>
+<li>Use the <strong>d</strong>isplay shortcut command</li>
+<li>Add the table name after the command</li>
+<li>It&rsquo;s the <code>\d</code> command</li>
+<li>Here&rsquo;s an example: <code>\d &lt;table_name&gt;</code></li>
+<li>Type <code>\d courses</code> into the psql prompt</li>
+</ul>
+<h2 id="280-create-composite-primary-key">280. Create Composite Primary Key<a class="headerlink" href="#280-create-composite-primary-key" title="Permanent link"></a></h2>
+<h3 id="2801">280.1<a class="headerlink" href="#2801" title="Permanent link"></a></h3>
+<p>There&rsquo;s one thing missing. This table doesn&rsquo;t have a primary key. The data from <code>courses.csv</code> will go in this table. A single major will be in it multiple times, and same with a course. So neither of them can be a primary key. But there will never be a row with the same two values as another row. So the two columns together, are unique. You can create a composite primary key that uses more than one column as a unique pair like this: <code>ALTER TABLE &lt;table_name&gt; ADD PRIMARY KEY(&lt;column_name&gt;, &lt;column_name&gt;);</code> Add a composite primary key to the table using the two columns.</p>
+<h4 id="hints_30">HINTS<a class="headerlink" href="#hints_30" title="Permanent link"></a></h4>
+<ul>
+<li>It&rsquo;s the <code>major_id</code> and <code>course_id</code> columns from the <code>majors_courses</code> table</li>
+<li>Type <code>ALTER TABLE majors_courses ADD PRIMARY KEY(major_id, course_id);</code> into the psql prompt</li>
+</ul>
+<h2 id="290-d-majors_courses">290. \d majors_courses<a class="headerlink" href="#290-d-majors_courses" title="Permanent link"></a></h2>
+<h3 id="2901">290.1<a class="headerlink" href="#2901" title="Permanent link"></a></h3>
+<p>View the details of the table again.</p>
+<h4 id="hints_31">HINTS<a class="headerlink" href="#hints_31" title="Permanent link"></a></h4>
+<ul>
+<li>Use the <strong>d</strong>isplay shortcut command</li>
+<li>Add the table name after the command</li>
+<li>It&rsquo;s the <code>\d</code> command</li>
+<li>Here&rsquo;s an example: <code>\d &lt;table_name&gt;</code></li>
+<li>Type <code>\d courses</code> into the psql prompt</li>
+</ul>
+<h2 id="300-d">300. \d<a class="headerlink" href="#300-d" title="Permanent link"></a></h2>
+<h3 id="3001">300.1<a class="headerlink" href="#3001" title="Permanent link"></a></h3>
+<p>Okay, now it&rsquo;s finished. View all the tables you ended up with.</p>
+<h4 id="hints_32">HINTS<a class="headerlink" href="#hints_32" title="Permanent link"></a></h4>
+<ul>
+<li>Use the <strong>d</strong>isplay shortcut command</li>
+<li>Don&rsquo;t include a table name after the command</li>
+<li>It&rsquo;s the <code>\d</code> command</li>
+<li>Type <code>\d</code> into the psql prompt</li>
+</ul>
+<h2 id="310-d-majors">310. \d majors<a class="headerlink" href="#310-d-majors" title="Permanent link"></a></h2>
+<h3 id="3101">310.1<a class="headerlink" href="#3101" title="Permanent link"></a></h3>
+<p>Next, you can start adding some info. Since the <code>students</code> table needs a <code>major_id</code>, you can add a major first. View the details of the <code>majors</code> table to see what info it expects.</p>
+<h4 id="hints_33">HINTS<a class="headerlink" href="#hints_33" title="Permanent link"></a></h4>
+<ul>
+<li>Use the <strong>d</strong>isplay shortcut command</li>
+<li>Add the table name after the command</li>
+<li>It&rsquo;s the <code>\d</code> command</li>
+<li>Here&rsquo;s an example: <code>\d &lt;table_name&gt;</code></li>
+<li>Type <code>\d majors</code> into the psql prompt</li>
+</ul>
+<h2 id="320-insert-into-majors">320. INSERT INTO majors<a class="headerlink" href="#320-insert-into-majors" title="Permanent link"></a></h2>
+<h3 id="3201">320.1<a class="headerlink" href="#3201" title="Permanent link"></a></h3>
+<p>It only needs the name of a major. The ID will be added automatically. Add the first major from the <code>courses.csv</code> file into the <code>majors</code> table. It&rsquo;s a <code>VARCHAR</code>, so make sure to put the value in single quotes.</p>
+<h4 id="hints_34">HINTS<a class="headerlink" href="#hints_34" title="Permanent link"></a></h4>
+<ul>
+<li>The major is <code>Database Administration</code></li>
+<li>Use the <code>INSERT INTO</code> and <code>VALUES</code> keywords</li>
+<li>Here&rsquo;s an example: <code>INSERT INTO &lt;table_name&gt;(&lt;column_name&gt;) VALUES(&lt;value&gt;);</code></li>
+<li>Type <code>INSERT INTO majors(major) VALUES('Database Administration');</code></li>
+</ul>
+<h2 id="340-select-from-majors">340. SELECT * FROM majors<a class="headerlink" href="#340-select-from-majors" title="Permanent link"></a></h2>
+<h3 id="3401">340.1<a class="headerlink" href="#3401" title="Permanent link"></a></h3>
+<p>Use <code>SELECT</code> to view all the data in the <code>majors</code> table to make sure it got inserted correctly.</p>
+<h4 id="hints_35">HINTS<a class="headerlink" href="#hints_35" title="Permanent link"></a></h4>
+<ul>
+<li>Use the <code>SELECT</code> and <code>FROM</code> keywords with <code>*</code> to view all the columns</li>
+<li>Here&rsquo;s an example: <code>SELECT &lt;columns&gt; FROM &lt;table_name&gt;;</code></li>
+<li>Type <code>SELECT * FROM majors;</code> into the psql prompt</li>
+</ul>
+<h2 id="350-insert-into-courses">350. INSERT INTO courses<a class="headerlink" href="#350-insert-into-courses" title="Permanent link"></a></h2>
+<h3 id="3501">350.1<a class="headerlink" href="#3501" title="Permanent link"></a></h3>
+<p>Next, insert the first course from <code>courses.csv</code> into the <code>courses</code> table.</p>
+<h4 id="hints_36">HINTS<a class="headerlink" href="#hints_36" title="Permanent link"></a></h4>
+<ul>
+<li>Use the <code>INSERT INTO</code> and <code>VALUES</code> keywords</li>
+<li>View the details of the table with <code>\d courses</code> to see what it expects</li>
+<li>The course name is <code>Data Structures and Algorithms</code></li>
+<li>Make sure to put <code>VARCHAR</code> values in single quotes</li>
+<li>Here&rsquo;s an example: <code>INSERT INTO &lt;table_name&gt;(&lt;column_name&gt;) VALUES(&lt;value&gt;);</code></li>
+<li>Type <code>INSERT INTO courses(course) VALUES('Data Structures and Algorithms');</code></li>
+</ul>
+<h2 id="360-select-from-courses">360. SELECT * FROM courses<a class="headerlink" href="#360-select-from-courses" title="Permanent link"></a></h2>
+<h3 id="3601">360.1<a class="headerlink" href="#3601" title="Permanent link"></a></h3>
+<p>View all the data in the <code>courses</code> table to make sure it got added.</p>
+<h4 id="hints_37">HINTS<a class="headerlink" href="#hints_37" title="Permanent link"></a></h4>
+<ul>
+<li>Use the <code>SELECT</code> and <code>FROM</code> keywords with <code>*</code> to view all the columns</li>
+<li>Here&rsquo;s an example: <code>SELECT &lt;columns&gt; FROM &lt;table_name&gt;;</code></li>
+<li>Type <code>SELECT * FROM courses;</code> into the psql prompt</li>
+</ul>
+<h2 id="370-d-majors_courses">370. \d majors_courses<a class="headerlink" href="#370-d-majors_courses" title="Permanent link"></a></h2>
+<h3 id="3701">370.1<a class="headerlink" href="#3701" title="Permanent link"></a></h3>
+<p>Next, you can add a row into the junction table. View the details of it to see what it expects.</p>
+<h4 id="hints_38">HINTS<a class="headerlink" href="#hints_38" title="Permanent link"></a></h4>
+<ul>
+<li>It&rsquo;s the <code>majors_courses</code> table</li>
+<li>Use the <strong>d</strong>isplay shortcut command</li>
+<li>Add the table name after the command</li>
+<li>It&rsquo;s the <code>\d</code> command</li>
+<li>Here&rsquo;s an example: <code>\d &lt;table_name&gt;</code></li>
+<li>Type <code>\d majors_courses</code> into the psql prompt</li>
+</ul>
+<h2 id="380-insert-into-majors_courses">380. INSERT INTO majors_courses<a class="headerlink" href="#380-insert-into-majors_courses" title="Permanent link"></a></h2>
+<h3 id="3801">380.1<a class="headerlink" href="#3801" title="Permanent link"></a></h3>
+<p>It wants a <code>major_id</code> and <code>course_id</code>. Add a row to <code>majors_courses</code> for the first entry in <code>courses.csv</code>.</p>
+<h4 id="hints_39">HINTS<a class="headerlink" href="#hints_39" title="Permanent link"></a></h4>
+<ul>
+<li>Use <code>SELECT * FROM &lt;table_name&gt;;</code> to find the two ID&rsquo;s you already added</li>
+<li>Use the <code>INSERT INTO</code> and <code>VALUES</code> keywords</li>
+<li>Here&rsquo;s an example: <code>INSERT INTO &lt;table_name&gt;(&lt;column_1_name&gt;, &lt;column_2_name&gt;) VALUES(&lt;value_1&gt;, &lt;value_2&gt;);</code></li>
+<li>Type <code>INSERT INTO majors_courses(major_id, course_id) VALUES(1, 1);</code> Note that your ID&rsquo;s may differ. You can reset the lesson to ensure they are the same</li>
+</ul>
+<h2 id="390-select-from-majors_courses">390. SELECT * FROM majors_courses<a class="headerlink" href="#390-select-from-majors_courses" title="Permanent link"></a></h2>
+<h3 id="3901">390.1<a class="headerlink" href="#3901" title="Permanent link"></a></h3>
+<p>View all the data in the table you just added to.</p>
+<h4 id="hints_40">HINTS<a class="headerlink" href="#hints_40" title="Permanent link"></a></h4>
+<ul>
+<li>Use the <code>SELECT</code> and <code>FROM</code> keywords with <code>*</code> to view all the columns</li>
+<li>Here&rsquo;s an example: <code>SELECT &lt;columns&gt; FROM &lt;table_name&gt;;</code></li>
+<li>Type <code>SELECT * FROM majors_courses;</code> into the psql prompt</li>
+</ul>
+<h2 id="400-d-students">400. \d students<a class="headerlink" href="#400-d-students" title="Permanent link"></a></h2>
+<h3 id="4001">400.1<a class="headerlink" href="#4001" title="Permanent link"></a></h3>
+<p>Looks like the row got added. View the details of the <code>students</code> table to remind yourself what it expects so you can add the first student to the database.</p>
+<h4 id="hints_41">HINTS<a class="headerlink" href="#hints_41" title="Permanent link"></a></h4>
+<ul>
+<li>Use the <strong>d</strong>isplay shortcut command</li>
+<li>Add the table name after the command</li>
+<li>It&rsquo;s the <code>\d</code> command</li>
+<li>Here&rsquo;s an example: <code>\d &lt;table_name&gt;</code></li>
+<li>Type <code>\d students</code> into the psql prompt</li>
+</ul>
+<h2 id="420-insert-into-students">420. INSERT INTO students<a class="headerlink" href="#420-insert-into-students" title="Permanent link"></a></h2>
+<h3 id="4201">420.1<a class="headerlink" href="#4201" title="Permanent link"></a></h3>
+<p>The output shows what the table needs. Insert the first person from <code>students.csv</code> into the <code>students</code> table.</p>
+<h4 id="hints_42">HINTS<a class="headerlink" href="#hints_42" title="Permanent link"></a></h4>
+<ul>
+<li>Enter <code>SELECT * FROM majors;</code> to find the <code>major_id</code> for the students major</li>
+<li>Use the <code>INSERT INTO</code> and <code>VALUES</code> keywords</li>
+<li>Make sure to put <code>VARCHAR</code> values in single quotes</li>
+<li>Here&rsquo;s an example: <code>INSERT INTO &lt;table_name&gt;(&lt;column_1_name&gt;, &lt;column_N_name&gt;) VALUES(&lt;value_1&gt;, &lt;value_N&gt;);</code></li>
+<li>The first part to insert the student looks like this: <code>INSERT INTO students(first_name, last_name, major_id, gpa)</code></li>
+<li>Type <code>INSERT INTO students(first_name, last_name, major_id, gpa) VALUES('Rhea', 'Kellems', 1, 2.5);</code> into the psql prompt</li>
+</ul>
+<h2 id="430-select-from-students">430. SELECT * FROM students<a class="headerlink" href="#430-select-from-students" title="Permanent link"></a></h2>
+<h3 id="4301">430.1<a class="headerlink" href="#4301" title="Permanent link"></a></h3>
+<p>Looks like it worked. View all the data in the students table to make sure.</p>
+<h4 id="hints_43">HINTS<a class="headerlink" href="#hints_43" title="Permanent link"></a></h4>
+<ul>
+<li>Use the <code>SELECT</code> and <code>FROM</code> keywords with <code>*</code> to view all the columns</li>
+<li>Here&rsquo;s an example: <code>SELECT &lt;columns&gt; FROM &lt;table_name&gt;;</code></li>
+<li>Type <code>SELECT * FROM students;</code> into the psql prompt</li>
+</ul>
+<h2 id="440-touch-insert_datash">440. touch insert_data.sh<a class="headerlink" href="#440-touch-insert_datash" title="Permanent link"></a></h2>
+<h3 id="4401">440.1<a class="headerlink" href="#4401" title="Permanent link"></a></h3>
+<p>Okay, you added a row into each table. It might be wise to review the data and the database structure. Adding the rest of the info one at a time would be tedious. You are going to make a script to do it for you. I recommend &ldquo;splitting&rdquo; the terminal for this part. You can do that by clicking the &ldquo;hamburger&rdquo; menu at the top left of the window, going to the &ldquo;Terminal&rdquo; menu, and clicking &ldquo;Split Terminal&rdquo;. Once you&rsquo;ve done that, use the <code>touch</code> command to create a file named <code>insert_data.sh</code> in your <code>project</code> folder.</p>
+<h4 id="hints_44">HINTS<a class="headerlink" href="#hints_44" title="Permanent link"></a></h4>
+<ul>
+<li>You cannot use regular terminal commands in the psql prompt. So follow the instructions to split the terminal. Then, type <code>touch insert_data.sh</code> in the new terminal and press enter</li>
+<li>Make sure you are in the <code>project</code> folder first</li>
+<li>You can get there by entering <code>cd ~/project</code> in the terminal</li>
+</ul>
+<h2 id="450-chmod-x-insert_datash">450. chmod +x insert_data.sh<a class="headerlink" href="#450-chmod-x-insert_datash" title="Permanent link"></a></h2>
+<h3 id="4501">450.1<a class="headerlink" href="#4501" title="Permanent link"></a></h3>
+<p>You should have two terminals open. One connected to PostgreSQL, and one for entering terminal commands. In the one for terminal commands, use the <code>chmod</code> command with the <code>+x</code> flag to give you new script executable permissions.</p>
+<h4 id="hints_45">HINTS<a class="headerlink" href="#hints_45" title="Permanent link"></a></h4>
+<ul>
+<li>Here&rsquo;s an example: <code>chmod +x &lt;filename&gt;</code></li>
+<li>Type <code>chmod +x insert_data.sh</code> in the terminal and press enter</li>
+<li>Make sure it&rsquo;s the regular terminal and not the psql one</li>
+<li>You can log back in to psql with <code>psql --username=freecodecamp --dbname=students</code></li>
+</ul>
+<h2 id="460-add-shebang">460. Add shebang<a class="headerlink" href="#460-add-shebang" title="Permanent link"></a></h2>
+<h3 id="4601">460.1<a class="headerlink" href="#4601" title="Permanent link"></a></h3>
+<p>Open your new file and add a &ldquo;shebang&rdquo; that uses <code>bash</code> at the top. It looks like this: <code>#!/bin/bash</code>.</p>
+<h4 id="hints_46">HINTS<a class="headerlink" href="#hints_46" title="Permanent link"></a></h4>
+<ul>
+<li>Add the text, <code>#!/bin/bash</code> to your <code>insert_data.sh</code> file</li>
+</ul>
+<h2 id="470-add-comment">470. Add comment<a class="headerlink" href="#470-add-comment" title="Permanent link"></a></h2>
+<h3 id="4701">470.1<a class="headerlink" href="#4701" title="Permanent link"></a></h3>
+<p>Below that, add a single line comment with the text, <code>Script to insert data from courses.csv and students.csv into students database</code>.</p>
+<h4 id="hints_47">HINTS<a class="headerlink" href="#hints_47" title="Permanent link"></a></h4>
+<ul>
+<li>A comment look like this: <code># &lt;comment&gt;</code></li>
+<li>Add <code># Script to insert data from courses.csv and students.csv into students database</code> below the &ldquo;shebang&rdquo; in your <code>insert_data.sh</code> file</li>
+</ul>
+<h2 id="480-add-cat-coursescsv">480. Add cat courses.csv<a class="headerlink" href="#480-add-cat-coursescsv" title="Permanent link"></a></h2>
+<h3 id="4801">480.1<a class="headerlink" href="#4801" title="Permanent link"></a></h3>
+<p>First, you should add all the info from the <code>courses.csv</code> file since you need the <code>major_id</code> for inserting the student info. <code>cat</code> is a terminal command for printing the contents of a file. Here&rsquo;s an example: <code>cat &lt;filename&gt;</code>. Below the comment you added, use it to print <code>courses.csv</code>.</p>
+<h4 id="hints_48">HINTS<a class="headerlink" href="#hints_48" title="Permanent link"></a></h4>
+<ul>
+<li>Add <code>cat courses.csv</code> to your <code>insert_data.sh</code> file below your comment</li>
+</ul>
+<h2 id="490-insert_datash">490. ./insert_data.sh<a class="headerlink" href="#490-insert_datash" title="Permanent link"></a></h2>
+<h3 id="4901">490.1<a class="headerlink" href="#4901" title="Permanent link"></a></h3>
+<p>Run your script to see if the file contents get printed.</p>
+<h4 id="hints_49">HINTS<a class="headerlink" href="#hints_49" title="Permanent link"></a></h4>
+<ul>
+<li>Run your <code>insert_data.sh</code> script by executing it</li>
+<li>Type <code>./insert_data.sh</code> in the terminal and press enter</li>
+<li>Make sure you are in the <code>project</code> folder first</li>
+</ul>
+<h2 id="500-add-while-read">500. Add while read<a class="headerlink" href="#500-add-while-read" title="Permanent link"></a></h2>
+<h3 id="5001">500.1<a class="headerlink" href="#5001" title="Permanent link"></a></h3>
+<p>It worked. Instead of printing the content, you can pipe that output into a while loop so you can go through the rows one at a time. It looks like this:</p>
+<div class="highlight"><pre>cat courses.csv <span class="p">|</span> <span class="k">while</span> <span class="nb">read </span>MAJOR COURSE
+<span class="k">do</span>
+  &lt;STATEMENTS&gt;
+<span class="k">done</span>
+</pre></div>
+
+<p>Each new line will be read into the variables, <code>MAJOR</code> and <code>COURSE</code>. Add the above to your <code>cat</code> command. In the <code>STATEMENTS</code> area, use <code>echo</code> to print the <code>MAJOR</code> variable.</p>
+<h4 id="hints_50">HINTS<a class="headerlink" href="#hints_50" title="Permanent link"></a></h4>
+<ul>
+<li>You can print the suggested variable with <code>echo $MAJOR</code></li>
+<li>The whole loop should look like this:
+<div class="highlight"><pre>cat courses.csv <span class="p">|</span> <span class="k">while</span> <span class="nb">read </span>MAJOR COURSE
+<span class="k">do</span>
+  <span class="nb">echo</span> <span class="nv">$MAJOR</span>
+<span class="k">done</span>
+</pre></div></li>
+</ul>
+<h2 id="510-insert_data">510. ./insert_data<a class="headerlink" href="#510-insert_data" title="Permanent link"></a></h2>
+<h3 id="5101">510.1<a class="headerlink" href="#5101" title="Permanent link"></a></h3>
+<p>Run the script to see if it worked.</p>
+<h4 id="hints_51">HINTS<a class="headerlink" href="#hints_51" title="Permanent link"></a></h4>
+<ul>
+<li>Run your <code>insert_data.sh</code> script by executing it</li>
+<li>Type <code>./insert_data.sh</code> in the terminal and press enter</li>
+<li>Make sure you are in the <code>project</code> folder first</li>
+</ul>
+<h2 id="515-declare-p-ifs">515. declare -p IFS<a class="headerlink" href="#515-declare-p-ifs" title="Permanent link"></a></h2>
+<h3 id="5151">515.1<a class="headerlink" href="#5151" title="Permanent link"></a></h3>
+<p>It&rsquo;s looping, but the <code>MAJOR</code> variable is only being set to the first word. There&rsquo;s a default <code>IFS</code> variable in bash. IFS stands for &ldquo;Internal Field Separator&rdquo;. View it with <code>declare -p IFS</code>.</p>
+<h4 id="hints_52">HINTS<a class="headerlink" href="#hints_52" title="Permanent link"></a></h4>
+<ul>
+<li>Enter <code>declare -p IFS</code> in the terminal</li>
+</ul>
+<h2 id="520-add-ifs">520. Add IFS<a class="headerlink" href="#520-add-ifs" title="Permanent link"></a></h2>
+<h3 id="5201">520.1<a class="headerlink" href="#5201" title="Permanent link"></a></h3>
+<p>This variable is used to determine word boundaries. It defaults to spaces, tabs, and new lines. This is why the <code>MAJOR</code> variable was set to only the first word on each line from the data. Between the <code>while</code> and <code>read</code> commands, set the <code>IFS</code> to a comma like this: <code>IFS=","</code></p>
+<h4 id="hints_53">HINTS<a class="headerlink" href="#hints_53" title="Permanent link"></a></h4>
+<ul>
+<li>Here&rsquo;s how it looks:
+<div class="highlight"><pre>cat courses.csv <span class="p">|</span> <span class="k">while</span> <span class="nv">IFS</span><span class="o">=</span><span class="s2">&quot;,&quot;</span> <span class="nb">read </span>MAJOR COURSE
+<span class="k">do</span>
+  <span class="nb">echo</span> <span class="nv">$MAJOR</span>
+<span class="k">done</span>
+</pre></div></li>
+</ul>
+<h2 id="530-insert_datash">530. ./insert_data.sh<a class="headerlink" href="#530-insert_datash" title="Permanent link"></a></h2>
+<h3 id="5301">530.1<a class="headerlink" href="#5301" title="Permanent link"></a></h3>
+<p>Now, it should use the comma in the data to separate words instead of spaces. Run the script again to see if it&rsquo;s working.</p>
+<h4 id="hints_54">HINTS<a class="headerlink" href="#hints_54" title="Permanent link"></a></h4>
+<ul>
+<li>Run your <code>insert_data.sh</code> script by executing it</li>
+<li>Type <code>./insert_data.sh</code> in the terminal and press enter</li>
+<li>Make sure you are in the <code>project</code> folder first</li>
+</ul>
+<h2 id="533-add-echo-all-variables">533. Add echo all variables<a class="headerlink" href="#533-add-echo-all-variables" title="Permanent link"></a></h2>
+<h3 id="5331">533.1<a class="headerlink" href="#5331" title="Permanent link"></a></h3>
+<p>Looks like that worked. It prints the whole major, including the space. Print the <code>COURSE</code> variable on the same line as where you print <code>MAJOR</code> to make sure it&rsquo;s all working.</p>
+<h4 id="hints_55">HINTS<a class="headerlink" href="#hints_55" title="Permanent link"></a></h4>
+<ul>
+<li>Change the <code>echo</code> line to <code>echo $MAJOR $COURSE</code></li>
+<li>The whole loop should look like this:
+<div class="highlight"><pre>cat courses.csv <span class="p">|</span> <span class="k">while</span> <span class="nv">IFS</span><span class="o">=</span><span class="s2">&quot;,&quot;</span> <span class="nb">read </span>MAJOR COURSE
+<span class="k">do</span>
+  <span class="nb">echo</span> <span class="nv">$MAJOR</span> <span class="nv">$COURSE</span>
+<span class="k">done</span>
+</pre></div></li>
+</ul>
+<h2 id="536-insert_datash">536. ./insert_data.sh<a class="headerlink" href="#536-insert_datash" title="Permanent link"></a></h2>
+<h3 id="5361">536.1<a class="headerlink" href="#5361" title="Permanent link"></a></h3>
+<p>Run the script again to check.</p>
+<h4 id="hints_56">HINTS<a class="headerlink" href="#hints_56" title="Permanent link"></a></h4>
+<ul>
+<li>Run your <code>insert_data.sh</code> script by executing it</li>
+<li>Type <code>./insert_data.sh</code> in the terminal and press enter</li>
+<li>Make sure you are in the <code>project</code> folder first</li>
+</ul>
+<h2 id="540-delete-echo">540. Delete echo<a class="headerlink" href="#540-delete-echo" title="Permanent link"></a></h2>
+<h3 id="5401">540.1<a class="headerlink" href="#5401" title="Permanent link"></a></h3>
+<p>Okay, your loop is working. You can use the <code>MAJOR</code> and <code>COURSE</code> variables to access the major or course when you need to insert data or query the database. Delete the echo line so you can figure out what to do next.</p>
+<h4 id="hints_57">HINTS<a class="headerlink" href="#hints_57" title="Permanent link"></a></h4>
+<ul>
+<li>Delete the <code>echo $MAJOR $COURSE</code> line</li>
+</ul>
+<h2 id="550-add-comments">550. Add comments<a class="headerlink" href="#550-add-comments" title="Permanent link"></a></h2>
+<h3 id="5501">550.1<a class="headerlink" href="#5501" title="Permanent link"></a></h3>
+<p>It helps to plan out what you want to happen. For each loop, you will want to add the major to the database if it isn&rsquo;t in there yet. Same for the course. Then add a row to the <code>majors_courses</code> table. Add these single line comments in your loop in this order: <code>get major_id</code>, <code>if not found</code>, <code>insert major</code>, <code>get new major_id</code>, <code>get course_id</code>, <code>if not found</code>, <code>insert course</code>, <code>get new course_id</code>, <code>insert into majors_courses</code>.</p>
+<h4 id="hints_58">HINTS<a class="headerlink" href="#hints_58" title="Permanent link"></a></h4>
+<ul>
+<li>Here&rsquo;s an example of a single comment: <code># &lt;comment&gt;</code></li>
+<li>Add the nine suggested single line comments, each on their own line, in the order given</li>
+<li>It should look like this:
+<div class="highlight"><pre><span class="k">do</span>
+  <span class="c1"># get major_id</span>
+
+  <span class="c1"># if not found</span>
+
+  <span class="c1"># insert major</span>
+
+  <span class="c1"># get new major_id</span>
+
+  <span class="c1"># get course_id</span>
+
+  <span class="c1"># if not found</span>
+
+  <span class="c1"># insert course</span>
+
+  <span class="c1"># get new course_id</span>
+
+  <span class="c1"># insert into majors_courses</span>
+
+<span class="k">done</span>
+</pre></div></li>
+</ul>
+<h2 id="560-add-psql-variable">560. Add PSQL Variable<a class="headerlink" href="#560-add-psql-variable" title="Permanent link"></a></h2>
+<h3 id="5601">560.1<a class="headerlink" href="#5601" title="Permanent link"></a></h3>
+<p>You used the <code>psql</code> command to log in and interact with the database. You can use it to just run a single command and exit. Above your loop, add a <code>PSQL</code> variable that looks like this: <code>PSQL="psql -X --username=freecodecamp --dbname=students --no-align --tuples-only -c"</code>. This will allow you to query your database from your script. The important parts are the <code>username</code>, <code>dbname</code>, and the <code>-c</code> flag that is for running a single command and exiting. The rest of the flags are for formatting.</p>
+<h4 id="hints_59">HINTS<a class="headerlink" href="#hints_59" title="Permanent link"></a></h4>
+<ul>
+<li>Add the suggested variable between your first comment and the loop</li>
+<li>The suggested area should look like this:
+<div class="highlight"><pre><span class="nv">PSQL</span><span class="o">=</span><span class="s2">&quot;psql -X --username=freecodecamp --dbname=students --no-align --tuples-only -c&quot;</span>
+</pre></div></li>
+</ul>
+<h2 id="562-add-major_id">562. Add MAJOR_ID<a class="headerlink" href="#562-add-major_id" title="Permanent link"></a></h2>
+<h3 id="5621">562.1<a class="headerlink" href="#5621" title="Permanent link"></a></h3>
+<p>Now, you can query your database using the <code>PSQL</code> variable like this: <code>$($PSQL "&lt;query_here&gt;")</code>. Below the <code>get major_id</code> comment in your loop, create a <code>MAJOR_ID</code> variable. Set it equal to the result of a query that gets the <code>major_id</code> of the current <code>MAJOR</code> in the loop. Make sure to put your <code>MAJOR</code> variable in single quotes.</p>
+<h4 id="hints_60">HINTS<a class="headerlink" href="#hints_60" title="Permanent link"></a></h4>
+<ul>
+<li>Here&rsquo;s an example of how it looks: <code>MAJOR_ID=$($PSQL "&lt;query_here&gt;")</code></li>
+<li>For the query, you want to use the <code>SELECT</code>, <code>FROM</code>, and <code>WHERE</code> keywords</li>
+<li>Here&rsquo;s an example of how the query part looks: <code>SELECT &lt;column_name&gt; FROM &lt;table_name&gt; WHERE &lt;condition&gt;</code></li>
+<li>The condition you want is <code>major_id='$MAJOR'</code></li>
+<li>Here&rsquo;s how the query should look: <code>SELECT major_id FROM majors WHERE major='$MAJOR'</code></li>
+<li>Here&rsquo;s how the whole line should look: <code>MAJOR_ID=$($PSQL "SELECT major_id FROM majors WHERE major='$MAJOR'")</code></li>
+</ul>
+<h2 id="564-add-echo-major_id">564. Add echo MAJOR_ID<a class="headerlink" href="#564-add-echo-major_id" title="Permanent link"></a></h2>
+<h3 id="5641">564.1<a class="headerlink" href="#5641" title="Permanent link"></a></h3>
+<p>Below the variable you just created, use <code>echo</code> to print it so you can see it&rsquo;s value when you run the script.</p>
+<h4 id="hints_61">HINTS<a class="headerlink" href="#hints_61" title="Permanent link"></a></h4>
+<ul>
+<li>Add <code>echo $MAJOR_ID</code> below the <code>MAJOR_ID</code> variable you created</li>
+</ul>
+<h2 id="566-insert_datash">566. ./insert_data.sh<a class="headerlink" href="#566-insert_datash" title="Permanent link"></a></h2>
+<h3 id="5661">566.1<a class="headerlink" href="#5661" title="Permanent link"></a></h3>
+<p>Run the script to see what happens.</p>
+<h4 id="hints_62">HINTS<a class="headerlink" href="#hints_62" title="Permanent link"></a></h4>
+<ul>
+<li>Run your <code>insert_data.sh</code> script by executing it</li>
+<li>Type <code>./insert_data.sh</code> in the terminal and press enter</li>
+<li>Make sure you are in the <code>project</code> folder first</li>
+</ul>
+<h2 id="568-add-if-z-major_id">568. Add if -z MAJOR_ID<a class="headerlink" href="#568-add-if-z-major_id" title="Permanent link"></a></h2>
+<h3 id="5681">568.1<a class="headerlink" href="#5681" title="Permanent link"></a></h3>
+<p>So it went through each major from the CSV file and tried to find <code>major_id</code> for each one from the database. Looks like it only found the one you manually inserted earlier. The rest were empty. Below your first <code>if not found</code> comment, add an <code>if</code> condition that checks if the <code>MAJOR_ID</code> variable is empty. You can do that with this test: <code>[[ -z $MAJOR_ID ]]</code>. Place the next two comments in the statements area of the <code>if</code>.</p>
+<h4 id="hints_63">HINTS<a class="headerlink" href="#hints_63" title="Permanent link"></a></h4>
+<ul>
+<li>Here&rsquo;s an example of an <code>if</code>:
+<div class="highlight"><pre><span class="k">if</span> CONDITION
+<span class="k">then</span>
+  STATEMENTS
+<span class="k">fi</span>
+</pre></div></li>
+<li>Make sure your <code>insert major</code> and <code>get new major_id</code> comments are in the statements area in that order</li>
+<li>Here&rsquo;s how it should look:
+<div class="highlight"><pre><span class="k">if</span> <span class="o">[[</span> -z <span class="nv">$MAJOR_ID</span> <span class="o">]]</span>
+<span class="k">then</span>
+  <span class="c1"># insert major</span>
+
+  <span class="c1"># get new major_id</span>
+
+<span class="k">fi</span>
+</pre></div></li>
+</ul>
+<h2 id="570-add-insert_major_result">570. Add INSERT_MAJOR_RESULT<a class="headerlink" href="#570-add-insert_major_result" title="Permanent link"></a></h2>
+<h3 id="5701">570.1<a class="headerlink" href="#5701" title="Permanent link"></a></h3>
+<p>The loop will go into this <code>if</code> whenever a major isn&rsquo;t found. Here, you will want to insert the major and then get the new id. You will need the ID for inserting data into the <code>majors_courses</code> table later. Below your <code>insert major</code> comment, create an <code>INSERT_MAJOR_RESULT</code> variable. Set it&rsquo;s value to a query that inserts the current major into the database. Don&rsquo;t forget to use single quotes around the value.</p>
+<h4 id="hints_64">HINTS<a class="headerlink" href="#hints_64" title="Permanent link"></a></h4>
+<ul>
+<li>Here&rsquo;s an example of how to query the database: <code>INSERT_MAJOR_RESULT=$($PSQL "&lt;query_here&gt;")</code></li>
+<li>For the query, you want to use the <code>INSERT INTO</code>, and <code>VALUES</code> keywords</li>
+<li>Here&rsquo;s an example of how the query part looks: <code>INSERT INTO &lt;table_name&gt;(&lt;column_name&gt;) VALUES(&lt;value&gt;)</code></li>
+<li>You want to insert the <code>$MAJOR</code> value</li>
+<li>Here&rsquo;s how the query looks: <code>INSERT INTO majors(major) VALUES('$MAJOR')</code></li>
+<li>Here&rsquo;s how the whole line should look: <code>INSERT_MAJOR_RESULT=$($PSQL "INSERT INTO majors(major) VALUES('$MAJOR')")</code></li>
+</ul>
+<h2 id="580-add-echo-insert_major_result">580. Add echo INSERT_MAJOR_RESULT<a class="headerlink" href="#580-add-echo-insert_major_result" title="Permanent link"></a></h2>
+<h3 id="5801">580.1<a class="headerlink" href="#5801" title="Permanent link"></a></h3>
+<p>Below the variable you just created, use <code>echo</code> to print it.</p>
+<h4 id="hints_65">HINTS<a class="headerlink" href="#hints_65" title="Permanent link"></a></h4>
+<ul>
+<li>Add <code>echo $INSERT_MAJOR_RESULT</code> right below where you created it</li>
+</ul>
+<h2 id="590-cp-coursescsv">590. cp courses.csv<a class="headerlink" href="#590-cp-coursescsv" title="Permanent link"></a></h2>
+<h3 id="5901">590.1<a class="headerlink" href="#5901" title="Permanent link"></a></h3>
+<p>Instead of running through all the data in the CSV file, you should make some test data. In the terminal, use the copy (<code>cp</code>) command to copy the <code>courses.csv</code> into a new file named <code>courses_test.csv</code>.</p>
+<h4 id="hints_66">HINTS<a class="headerlink" href="#hints_66" title="Permanent link"></a></h4>
+<ul>
+<li>Here&rsquo;s an example: <code>cp &lt;filename&gt; &lt;new_name&gt;</code></li>
+<li>Type <code>cp courses.csv courses_test.csv</code> in the terminal and press enter</li>
+<li>Make sure you are using the bash terminal and not the psql one</li>
+</ul>
+<h2 id="600-add-four-records-to-courses_testcsv">600. Add four records to courses_test.csv<a class="headerlink" href="#600-add-four-records-to-courses_testcsv" title="Permanent link"></a></h2>
+<h3 id="6001">600.1<a class="headerlink" href="#6001" title="Permanent link"></a></h3>
+<p>In your new file, remove all the data except for the first five lines. Make sure there&rsquo;s a single empty line at the bottom.</p>
+<h4 id="hints_67">HINTS<a class="headerlink" href="#hints_67" title="Permanent link"></a></h4>
+<ul>
+<li>Remove all but the first five lines from the <code>courses_test.csv</code> file</li>
+<li>Or, replace everything in <code>courses_test.csv</code> with the first five lines from <code>courses.csv</code></li>
+<li>Make sure there&rsquo;s one empty line at the bottom</li>
+<li>The <code>courses_test.csv</code> file should look like this:
+<div class="highlight"><pre>major,course
+Database Administration,Data Structures and Algorithms
+Web Development,Web Programming
+Database Administration,Database Systems
+Data Science,Data Structures and Algorithms
+</pre></div></li>
+</ul>
+<h2 id="610-change-to-cat-courses_testcsv">610. Change to cat courses_test.csv<a class="headerlink" href="#610-change-to-cat-courses_testcsv" title="Permanent link"></a></h2>
+<h3 id="6101">610.1<a class="headerlink" href="#6101" title="Permanent link"></a></h3>
+<p>Back in the <code>insert_data.sh</code> script, change your <code>cat</code> command to loop through the test file instead of the full one.</p>
+<h4 id="hints_68">HINTS<a class="headerlink" href="#hints_68" title="Permanent link"></a></h4>
+<ul>
+<li>Change your <code>cat</code> command to <code>cat courses_test.csv</code> instead of <code>cat courses.csv</code></li>
+<li>The suggested line should look like this:
+<div class="highlight"><pre>cat courses_test.csv <span class="p">|</span> <span class="k">while</span> <span class="nv">IFS</span><span class="o">=</span><span class="s2">&quot;,&quot;</span> <span class="nb">read </span>MAJOR COURSE
+</pre></div></li>
+</ul>
+<h2 id="620-insert_datash">620. ./insert_data.sh<a class="headerlink" href="#620-insert_datash" title="Permanent link"></a></h2>
+<h3 id="6201">620.1<a class="headerlink" href="#6201" title="Permanent link"></a></h3>
+<p>Run the script. It will go through the test data and insert a major into the database each time it doesn&rsquo;t find one already there and print the <code>MAJOR_ID</code> and <code>INSERT_MAJOR_RESULT</code> variables.</p>
+<h4 id="hints_69">HINTS<a class="headerlink" href="#hints_69" title="Permanent link"></a></h4>
+<ul>
+<li>Run your <code>insert_data.sh</code> script by executing it</li>
+<li>Type <code>./insert_data.sh</code> in the terminal and press enter</li>
+<li>The <code>majors</code> table should have four rows after running the script. If it doesn&rsquo;t, there might be something wrong in the script. You can use the reset button to reset the lesson and run the script again</li>
+</ul>
+<h2 id="625-delete-echo-major_id">625. Delete echo MAJOR_ID<a class="headerlink" href="#625-delete-echo-major_id" title="Permanent link"></a></h2>
+<h3 id="6251">625.1<a class="headerlink" href="#6251" title="Permanent link"></a></h3>
+<p>Looks like found an ID that was already in the database twice and inserted three new items into the database. You don&rsquo;t need to print the ID anymore so delete the <code>echo $MAJOR_ID</code> line.</p>
+<h4 id="hints_70">HINTS<a class="headerlink" href="#hints_70" title="Permanent link"></a></h4>
+<ul>
+<li>Delete the <code>echo $MAJOR_ID</code> line</li>
+</ul>
+<h2 id="630-select-from-majors">630. SELECT * FROM majors<a class="headerlink" href="#630-select-from-majors" title="Permanent link"></a></h2>
+<h3 id="6301">630.1<a class="headerlink" href="#6301" title="Permanent link"></a></h3>
+<p>In the psql prompt, use <code>SELECT</code> to view all the data from the <code>majors</code> table to see what the script added.</p>
+<h4 id="hints_71">HINTS<a class="headerlink" href="#hints_71" title="Permanent link"></a></h4>
+<ul>
+<li>Use the <code>SELECT</code> and <code>FROM</code> keywords with <code>*</code> to view all the data</li>
+<li>Enter <code>SELECT * FROM majors;</code> in the psql prompt</li>
+<li>Enter <code>psql --username=freecodecamp --dbname=students</code> in the terminal to log into the psql prompt if you aren&rsquo;t already</li>
+</ul>
+<h2 id="640-truncate-majors">640. TRUNCATE majors<a class="headerlink" href="#640-truncate-majors" title="Permanent link"></a></h2>
+<h3 id="6401">640.1<a class="headerlink" href="#6401" title="Permanent link"></a></h3>
+<p>I forgot you inserted <code>Database Administration</code> earlier. The script ran and inserted <code>major</code> from the top line of the file. Then it added the other two that weren&rsquo;t already in there. You can use <code>TRUNCATE</code> to delete all data from a table. In the psql prompt, try to delete all the data in the majors table by entering <code>TRUNCATE majors;</code></p>
+<h4 id="hints_72">HINTS<a class="headerlink" href="#hints_72" title="Permanent link"></a></h4>
+<ul>
+<li>Enter <code>TRUNCATE majors;</code> in the psql prompt</li>
+<li>Enter <code>psql --username=freecodecamp --dbname=students</code> in the terminal to log into the psql prompt if you aren&rsquo;t already</li>
+</ul>
+<h2 id="660-truncate-majors-students-majors_courses">660. TRUNCATE majors, students, majors_courses<a class="headerlink" href="#660-truncate-majors-students-majors_courses" title="Permanent link"></a></h2>
+<h3 id="6601">660.1<a class="headerlink" href="#6601" title="Permanent link"></a></h3>
+<p>It says you &ldquo;cannot truncate a table referenced in a foreign key constraint.&rdquo; The <code>students</code> and <code>majors_courses</code> tables use the <code>major_id</code> from <code>majors</code> as a foreign key. So if you want to delete the data from <code>majors</code>, you need to delete the data from those two tables at the same time. Use <code>TRUNCATE</code> to delete the data from those three tables. Separate the tables with commas.</p>
+<h4 id="hints_73">HINTS<a class="headerlink" href="#hints_73" title="Permanent link"></a></h4>
+<ul>
+<li>Here&rsquo;s an example: <code>TRUNCATE &lt;table_1&gt;, &lt;table_2&gt;, &lt;table_3&gt;;</code></li>
+<li>The three tables you want are <code>majors</code>, <code>students</code>, and <code>majors_courses</code></li>
+<li>Enter <code>TRUNCATE majors, students, majors_courses;</code> in the psql prompt</li>
+</ul>
+<h2 id="670-select-from-majors">670. SELECT * FROM majors<a class="headerlink" href="#670-select-from-majors" title="Permanent link"></a></h2>
+<h3 id="6701">670.1<a class="headerlink" href="#6701" title="Permanent link"></a></h3>
+<p>View all the data in the <code>majors</code> table to make sure it&rsquo;s empty.</p>
+<h4 id="hints_74">HINTS<a class="headerlink" href="#hints_74" title="Permanent link"></a></h4>
+<ul>
+<li>Use the <code>SELECT</code> and <code>FROM</code> keywords with <code>*</code> to view all the data</li>
+<li>Enter <code>SELECT * FROM majors;</code> in the psql prompt</li>
+<li>Enter <code>psql --username=freecodecamp --dbname=students</code> in the terminal to log into the psql prompt if you aren&rsquo;t already</li>
+</ul>
+<h2 id="680-select-from-majors_courses">680. SELECT * FROM majors_courses<a class="headerlink" href="#680-select-from-majors_courses" title="Permanent link"></a></h2>
+<h3 id="6801">680.1<a class="headerlink" href="#6801" title="Permanent link"></a></h3>
+<p>Looks like it worked. View all the data in the <code>majors_courses</code> table to see if that one is empty.</p>
+<h4 id="hints_75">HINTS<a class="headerlink" href="#hints_75" title="Permanent link"></a></h4>
+<ul>
+<li>Use the <code>SELECT</code> and <code>FROM</code> keywords with <code>*</code> to view all the data</li>
+<li>Enter <code>SELECT * FROM majors_courses;</code> in the psql prompt</li>
+<li>Enter <code>psql --username=freecodecamp --dbname=students</code> in the terminal to log into the psql prompt if you aren&rsquo;t already</li>
+</ul>
+<h2 id="690-select-from-students">690. SELECT * FROM students<a class="headerlink" href="#690-select-from-students" title="Permanent link"></a></h2>
+<h3 id="6901">690.1<a class="headerlink" href="#6901" title="Permanent link"></a></h3>
+<p>It is, check the <code>students</code> table.</p>
+<h4 id="hints_76">HINTS<a class="headerlink" href="#hints_76" title="Permanent link"></a></h4>
+<ul>
+<li>Use the <code>SELECT</code> and <code>FROM</code> keywords with <code>*</code> to view all the data</li>
+<li>Enter <code>SELECT * FROM students;</code> in the psql prompt</li>
+<li>Enter <code>psql --username=freecodecamp --dbname=students</code> in the terminal to log into the psql prompt if you aren&rsquo;t already</li>
+</ul>
+<h2 id="700-select-from-courses">700. SELECT * FROM courses<a class="headerlink" href="#700-select-from-courses" title="Permanent link"></a></h2>
+<h3 id="7001">700.1<a class="headerlink" href="#7001" title="Permanent link"></a></h3>
+<p>Last, check the <code>courses</code> table.</p>
+<h4 id="hints_77">HINTS<a class="headerlink" href="#hints_77" title="Permanent link"></a></h4>
+<ul>
+<li>Use the <code>SELECT</code> and <code>FROM</code> keywords with <code>*</code> to view all the data</li>
+<li>Enter <code>SELECT * FROM courses;</code> in the psql prompt</li>
+<li>Enter <code>psql --username=freecodecamp --dbname=students</code> in the terminal to log into the psql prompt if you aren&rsquo;t already</li>
+</ul>
+<h2 id="710-truncate-courses-majors_courses">710. TRUNCATE courses, majors_courses<a class="headerlink" href="#710-truncate-courses-majors_courses" title="Permanent link"></a></h2>
+<h3 id="7101">710.1<a class="headerlink" href="#7101" title="Permanent link"></a></h3>
+<p>There should still be one entry in there. Use <code>TRUNCATE</code> to delete all the data from the <code>courses</code> table. You will need to truncate any tables that use a column from it as a foreign key at the same time.</p>
+<h4 id="hints_78">HINTS<a class="headerlink" href="#hints_78" title="Permanent link"></a></h4>
+<ul>
+<li>Here&rsquo;s an example: <code>TRUNCATE &lt;table_1&gt;, &lt;table_2&gt;;</code></li>
+<li>The tables you want are <code>courses</code>, and <code>majors_courses</code></li>
+<li>Enter <code>TRUNCATE courses, majors_courses;</code> in the psql prompt</li>
+</ul>
+<h2 id="720-select-from-courses">720. SELECT * FROM courses<a class="headerlink" href="#720-select-from-courses" title="Permanent link"></a></h2>
+<h3 id="7201">720.1<a class="headerlink" href="#7201" title="Permanent link"></a></h3>
+<p>View all the data in the <code>courses</code> table again.</p>
+<h4 id="hints_79">HINTS<a class="headerlink" href="#hints_79" title="Permanent link"></a></h4>
+<ul>
+<li>Use the <code>SELECT</code> and <code>FROM</code> keywords with <code>*</code> to view all the data</li>
+<li>Enter <code>SELECT * FROM courses;</code> in the psql prompt</li>
+<li>Enter <code>psql --username=freecodecamp --dbname=students</code> in the terminal to log into the psql prompt if you aren&rsquo;t already</li>
+</ul>
+<h2 id="730-insert_datash">730. ./insert_data.sh<a class="headerlink" href="#730-insert_datash" title="Permanent link"></a></h2>
+<h3 id="7301">730.1<a class="headerlink" href="#7301" title="Permanent link"></a></h3>
+<p>Now the database is completely empty. Run the script again to see what gets inserted when the database is empty.</p>
+<h4 id="hints_80">HINTS<a class="headerlink" href="#hints_80" title="Permanent link"></a></h4>
+<ul>
+<li>Run your <code>insert_data.sh</code> script by executing it</li>
+<li>Type <code>./insert_data.sh</code> in the terminal and press enter</li>
+<li>The <code>majors</code> table should have four rows after running the script. If it doesn&rsquo;t, there might be something wrong in the script. You can use the reset button to reset the lesson and run the script again</li>
+</ul>
+<h2 id="740-select-from-majors">740. SELECT * FROM majors<a class="headerlink" href="#740-select-from-majors" title="Permanent link"></a></h2>
+<h3 id="7401">740.1<a class="headerlink" href="#7401" title="Permanent link"></a></h3>
+<p>It inserted four that time. In the psql prompt, view all the data in the <code>majors</code> table.</p>
+<h4 id="hints_81">HINTS<a class="headerlink" href="#hints_81" title="Permanent link"></a></h4>
+<ul>
+<li>Use the <code>SELECT</code> and <code>FROM</code> keywords with <code>*</code> to view all the data</li>
+<li>Enter <code>SELECT * FROM majors;</code> in the psql prompt</li>
+<li>Enter <code>psql --username=freecodecamp --dbname=students</code> in the terminal to log into the psql prompt if you aren&rsquo;t already</li>
+</ul>
+<h2 id="750-add-if-major">750. Add if major<a class="headerlink" href="#750-add-if-major" title="Permanent link"></a></h2>
+<h3 id="7501">750.1<a class="headerlink" href="#7501" title="Permanent link"></a></h3>
+<p>You won&rsquo;t want to add the first line from the CSV file to the database since those are just titles. In your script, add an <code>if</code> condition at the top of your loop that checks if <code>$MAJOR != major</code>. Put all the existing code and comments in your loop in it&rsquo;s statements area so it only does any of it if it&rsquo;s not the first line.</p>
+<h4 id="hints_82">HINTS<a class="headerlink" href="#hints_82" title="Permanent link"></a></h4>
+<ul>
+<li>Here&rsquo;s an example of an <code>if</code>:
+<div class="highlight"><pre><span class="k">if</span> <span class="o">[[</span> CONDITION <span class="o">]]</span>
+<span class="k">then</span>
+  STATEMENTS
+<span class="k">fi</span>
+</pre></div></li>
+<li>Your loop area should look like this:
+<div class="highlight"><pre><span class="k">do</span>
+  <span class="k">if</span> <span class="o">[[</span> <span class="nv">$MAJOR</span> !<span class="o">=</span> major <span class="o">]]</span>
+  <span class="k">then</span>
+    <span class="c1"># get major_id</span>
+    <span class="nv">MAJOR_ID</span><span class="o">=</span><span class="k">$(</span><span class="nv">$PSQL</span> <span class="s2">&quot;SELECT major_id FROM majors WHERE major=&#39;</span><span class="nv">$MAJOR</span><span class="s2">&#39;&quot;</span><span class="k">)</span>
+
+    <span class="c1"># if not found</span>
+    <span class="k">if</span> <span class="o">[[</span> -z <span class="nv">$MAJOR_ID</span> <span class="o">]]</span>
+    <span class="k">then</span>
+      <span class="c1"># insert major</span>
+      <span class="nv">INSERT_MAJOR_RESULT</span><span class="o">=</span><span class="k">$(</span><span class="nv">$PSQL</span> <span class="s2">&quot;INSERT INTO majors(major) VALUES(&#39;</span><span class="nv">$MAJOR</span><span class="s2">&#39;)&quot;</span><span class="k">)</span>
+      <span class="nb">echo</span> <span class="nv">$INSERT_MAJOR_RESULT</span>
+
+      <span class="c1"># get new major_id</span>
+
+    <span class="k">fi</span>
+
+    <span class="c1"># get course_id</span>
+
+    <span class="c1"># if not found</span>
+
+    <span class="c1"># insert course</span>
+
+    <span class="c1"># get new course_id</span>
+
+    <span class="c1"># insert into majors_courses</span>
+
+  <span class="k">fi</span>
+<span class="k">done</span>
+</pre></div></li>
+</ul>
+<h2 id="760-truncate-majors-cascade">760. TRUNCATE majors CASCADE<a class="headerlink" href="#760-truncate-majors-cascade" title="Permanent link"></a></h2>
+<h3 id="7601">760.1<a class="headerlink" href="#7601" title="Permanent link"></a></h3>
+<p>In the psql prompt, use <code>TRUNCATE</code> to delete all the data in the <code>majors</code> table. </p>
+<h4 id="hints_83">HINTS<a class="headerlink" href="#hints_83" title="Permanent link"></a></h4>
+<ul>
+<li>Make sure to delete data in the tables that use any of the <code>majors</code> columns as a foreign key at the same time</li>
+<li>Here&rsquo;s an example: <code>TRUNCATE &lt;table_1&gt;, &lt;table_2&gt;;</code></li>
+<li>You need to truncate <code>majors</code>, <code>students</code>, and <code>majors_courses</code> together</li>
+<li>Enter <code>TRUNCATE majors, students, majors_courses;</code> in the psql prompt</li>
+<li>Enter <code>psql --username=freecodecamp --dbname=students</code> in the terminal to log into the psql prompt if you aren&rsquo;t already</li>
+</ul>
+<h2 id="770-select-from-majors">770. SELECT * FROM majors<a class="headerlink" href="#770-select-from-majors" title="Permanent link"></a></h2>
+<h3 id="7701">770.1<a class="headerlink" href="#7701" title="Permanent link"></a></h3>
+<p>View all the data in <code>majors</code> table to make sure it&rsquo;s empty.</p>
+<h4 id="hints_84">HINTS<a class="headerlink" href="#hints_84" title="Permanent link"></a></h4>
+<ul>
+<li>Use the <code>SELECT</code> and <code>FROM</code> keywords with <code>*</code> to view all the data</li>
+<li>Enter <code>SELECT * FROM majors;</code> in the psql prompt</li>
+<li>Enter <code>psql --username=freecodecamp --dbname=students</code> in the terminal to log into the psql prompt if you aren&rsquo;t already</li>
+</ul>
+<h2 id="780-insert_datash">780. ./insert_data.sh<a class="headerlink" href="#780-insert_datash" title="Permanent link"></a></h2>
+<h3 id="7801">780.1<a class="headerlink" href="#7801" title="Permanent link"></a></h3>
+<p>Run the script to make sure it&rsquo;s not adding the first line anymore.</p>
+<h4 id="hints_85">HINTS<a class="headerlink" href="#hints_85" title="Permanent link"></a></h4>
+<ul>
+<li>Run your <code>insert_data.sh</code> script by executing it</li>
+<li>Type <code>./insert_data.sh</code> in the terminal and press enter</li>
+<li>The <code>majors</code> table should have three rows after running the script. If it doesn&rsquo;t, there might be something wrong in the script. You can use the reset button to reset the lesson and run the script again</li>
+</ul>
+<h2 id="790-select-from-majors">790. SELECT * FROM majors<a class="headerlink" href="#790-select-from-majors" title="Permanent link"></a></h2>
+<h3 id="7901">790.1<a class="headerlink" href="#7901" title="Permanent link"></a></h3>
+<p>It only showed three inserts, that&rsquo;s a good sign. View all the data in <code>majors</code> table to make sure it&rsquo;s three you want.</p>
+<h4 id="hints_86">HINTS<a class="headerlink" href="#hints_86" title="Permanent link"></a></h4>
+<ul>
+<li>Use the <code>SELECT</code> and <code>FROM</code> keywords with <code>*</code> to view all the data</li>
+<li>Enter <code>SELECT * FROM majors;</code> in the psql prompt</li>
+<li>Enter <code>psql --username=freecodecamp --dbname=students</code> in the terminal to log into the psql prompt if you aren&rsquo;t already</li>
+</ul>
+<h2 id="800-delete-echo-insert_major_result">800. Delete echo INSERT_MAJOR_RESULT<a class="headerlink" href="#800-delete-echo-insert_major_result" title="Permanent link"></a></h2>
+<h3 id="8001">800.1<a class="headerlink" href="#8001" title="Permanent link"></a></h3>
+<p>There&rsquo;s three unique majors in your test data. Those were the three added to the database, so it looks like it&rsquo;s working. Delete the line where you print <code>INSERT_MAJOR_RESULT</code>.</p>
+<h4 id="hints_87">HINTS<a class="headerlink" href="#hints_87" title="Permanent link"></a></h4>
+<ul>
+<li>Delete the <code>echo $INSERT_MAJOR_RESULT</code> line</li>
+</ul>
+<h2 id="810-add-if-insert_major_result">810. Add if INSERT_MAJOR_RESULT<a class="headerlink" href="#810-add-if-insert_major_result" title="Permanent link"></a></h2>
+<h3 id="8101">810.1<a class="headerlink" href="#8101" title="Permanent link"></a></h3>
+<p>You want a nicer message when something get&rsquo;s inserted so it&rsquo;s more informative. Below your <code>INSERT_MAJOR_RESULT</code> variable, add an <code>if</code> statement that checks if the variable is equal to <code>INSERT 0 1</code>, which was what it was printing. Use <code>echo</code> to print <code>Inserted into majors, $MAJOR</code> in the statements area of the <code>if</code>.</p>
+<h4 id="hints_88">HINTS<a class="headerlink" href="#hints_88" title="Permanent link"></a></h4>
+<ul>
+<li>Make sure to put the test value (<code>INSERT 0 1</code>) in double quotes since it has spaces.</li>
+<li>The condition you want is: <code>[[ $INSERT_MAJOR_RESULT == "INSERT 0 1" ]]</code></li>
+<li>The <code>echo</code> part looks like this: <code>echo "Inserted into majors, $MAJOR"</code></li>
+<li>The whole thing should look like this:
+<div class="highlight"><pre><span class="k">if</span> <span class="o">[[</span> <span class="nv">$INSERT_MAJOR_RESULT</span> <span class="o">==</span> <span class="s2">&quot;INSERT 0 1&quot;</span> <span class="o">]]</span>
+<span class="k">then</span>
+  <span class="nb">echo</span> <span class="s2">&quot;Inserted into majors, </span><span class="nv">$MAJOR</span><span class="s2">&quot;</span>
+<span class="k">fi</span>
+</pre></div></li>
+</ul>
+<h2 id="820-truncate-majors-cascade">820. TRUNCATE majors CASCADE<a class="headerlink" href="#820-truncate-majors-cascade" title="Permanent link"></a></h2>
+<h3 id="8201">820.1<a class="headerlink" href="#8201" title="Permanent link"></a></h3>
+<p>In the psql prompt, truncate the <code>majors</code> table again so you can run the script and see the output.</p>
+<h4 id="hints_89">HINTS<a class="headerlink" href="#hints_89" title="Permanent link"></a></h4>
+<ul>
+<li>Here&rsquo;s an example: <code>TRUNCATE &lt;table_1&gt;, &lt;table_2&gt;;</code></li>
+<li>Make sure to delete data in the tables that use any of the <code>majors</code> columns as a foreign key at the same time</li>
+<li>You need to truncate <code>majors</code>, <code>students</code>, and <code>majors_courses</code> together</li>
+<li>Enter <code>TRUNCATE majors, students, majors_courses;</code> in the psql prompt</li>
+<li>Enter <code>psql --username=freecodecamp --dbname=students</code> in the terminal to log into the psql prompt if you aren&rsquo;t already</li>
+</ul>
+<h2 id="830-insert_datash">830. ./insert_data.sh<a class="headerlink" href="#830-insert_datash" title="Permanent link"></a></h2>
+<h3 id="8301">830.1<a class="headerlink" href="#8301" title="Permanent link"></a></h3>
+<p>Check to make sure the table is empty. Then, run the script.</p>
+<h4 id="hints_90">HINTS<a class="headerlink" href="#hints_90" title="Permanent link"></a></h4>
+<ul>
+<li>Run your <code>insert_data.sh</code> script by executing it</li>
+<li>Type <code>./insert_data.sh</code> in the terminal and press enter</li>
+<li>The <code>majors</code> table should have three rows after running the script. If it doesn&rsquo;t, there might be something wrong in the script. You can use the reset button to reset the lesson and run the script again</li>
+</ul>
+<h2 id="835-add-major_id">835. Add MAJOR_ID<a class="headerlink" href="#835-add-major_id" title="Permanent link"></a></h2>
+<h3 id="8351">835.1<a class="headerlink" href="#8351" title="Permanent link"></a></h3>
+<p>It&rsquo;s starting to come together. Below your <code>get new major_id</code> comment, set the <code>MAJOR_ID</code> variable to a query that gets the new <code>major_id</code> from the database.</p>
+<h4 id="hints_91">HINTS<a class="headerlink" href="#hints_91" title="Permanent link"></a></h4>
+<ul>
+<li>Here&rsquo;s an example of how to query the database: <code>MAJOR_ID=$($PSQL "&lt;query_here&gt;")</code></li>
+<li>For the query, you want to use the <code>SELECT</code>, <code>FROM</code>, and <code>WHERE</code> keywords</li>
+<li>Here&rsquo;s an example of how the query part looks: <code>SELECT &lt;column_name&gt; FROM &lt;table_name&gt; WHERE &lt;condition&gt;</code></li>
+<li>The condition you want is <code>major='$MAJOR'</code></li>
+<li>Here&rsquo;s how the query should look: <code>SELECT major_id FROM majors WHERE major='$MAJOR'</code></li>
+<li>Here&rsquo;s how the whole line should look: <code>MAJOR_ID=$($PSQL "SELECT major_id FROM majors WHERE major='$MAJOR'")</code></li>
+<li>Make sure it&rsquo;s in the <code>if [[ -z $MAJOR_ID ]]</code> statements area</li>
+</ul>
+<h2 id="840-add-course_id">840. Add COURSE_ID<a class="headerlink" href="#840-add-course_id" title="Permanent link"></a></h2>
+<h3 id="8401">840.1<a class="headerlink" href="#8401" title="Permanent link"></a></h3>
+<p>So the script will insert the majors correctly. Next are the courses. It will be the same steps as for the majors. Below your <code>get course_id</code> comment, add a <code>COURSE_ID</code> variable that gets the <code>course_id</code> from the database. Remember that your <code>COURSE</code> variable will have the current course in the loop.</p>
+<h4 id="hints_92">HINTS<a class="headerlink" href="#hints_92" title="Permanent link"></a></h4>
+<ul>
+<li>Here&rsquo;s an example of how to query the database: <code>COURSE_ID=$($PSQL "&lt;query_here&gt;")</code></li>
+<li>For the query, you want to use the <code>SELECT</code>, <code>FROM</code>, and <code>WHERE</code> keywords</li>
+<li>Here&rsquo;s an example of how the query part looks: <code>SELECT &lt;column_name&gt; FROM &lt;table_name&gt; WHERE &lt;condition&gt;</code></li>
+<li>The condition you want is <code>course_id='$COURSE'</code></li>
+<li>Here&rsquo;s how the query should look: <code>SELECT course_id FROM courses WHERE course='$COURSE'</code></li>
+<li>Here&rsquo;s how the whole line should look: <code>COURSE_ID=$($PSQL "SELECT course_id FROM courses WHERE course='$COURSE'")</code></li>
+</ul>
+<h2 id="850-add-if-z-course_id">850. Add if -z COURSE_ID<a class="headerlink" href="#850-add-if-z-course_id" title="Permanent link"></a></h2>
+<h3 id="8501">850.1<a class="headerlink" href="#8501" title="Permanent link"></a></h3>
+<p>It&rsquo;s the same as the majors, so below the second <code>if not found</code> comment, add an <code>if</code> statement that checks if the query was empty so you can insert the course if needed. Place the existing <code>insert course</code> and <code>get new course_id</code> comments in the statements area of the <code>if</code>. </p>
+<h4 id="hints_93">HINTS<a class="headerlink" href="#hints_93" title="Permanent link"></a></h4>
+<ul>
+<li>Here&rsquo;s an example of an <code>if</code>:
+<div class="highlight"><pre><span class="k">if</span> <span class="o">[[</span> CONDITION <span class="o">]]</span>
+<span class="k">then</span>
+  STATEMENTS
+<span class="k">fi</span>
+</pre></div></li>
+<li>Make sure your <code>insert course</code> and <code>get new course_id</code> comments are in the statements area in that order</li>
+<li>Here&rsquo;s how it should look:
+<div class="highlight"><pre><span class="k">if</span> <span class="o">[[</span> -z <span class="nv">$COURSE_ID</span> <span class="o">]]</span>
+<span class="k">then</span>
+  <span class="c1"># insert course</span>
+
+  <span class="c1"># get new course_id</span>
+
+<span class="k">fi</span>
+</pre></div></li>
+</ul>
+<h2 id="853-add-insert_course_result">853. Add INSERT_COURSE_RESULT<a class="headerlink" href="#853-add-insert_course_result" title="Permanent link"></a></h2>
+<h3 id="8531">853.1<a class="headerlink" href="#8531" title="Permanent link"></a></h3>
+<p>Below the <code>insert course</code> comment, create an <code>INSERT_COURSE_RESULT</code> variable that inserts the course into the database.</p>
+<h4 id="hints_94">HINTS<a class="headerlink" href="#hints_94" title="Permanent link"></a></h4>
+<ul>
+<li>Check the table structure in the psql prompt with <code>\d courses</code> if you need to see the columns</li>
+<li>Here&rsquo;s an example of how to query the database: <code>INSERT_COURSE_RESULT=$($PSQL "&lt;query_here&gt;")</code></li>
+<li>For the query, you want to use the <code>INSERT INTO</code>, and <code>VALUES</code> keywords</li>
+<li>Here&rsquo;s an example of how the query part looks: <code>INSERT INTO &lt;table_name&gt;(&lt;column_name&gt;) VALUES(&lt;value&gt;)</code></li>
+<li>You want to insert the <code>$COURSE</code> value</li>
+<li>Here&rsquo;s how the query looks: <code>INSERT INTO courses(course) VALUES('$COURSE')</code></li>
+<li>Here&rsquo;s how the whole line should look: <code>INSERT_COURSE_RESULT=$($PSQL "INSERT INTO courses(course) VALUES('$COURSE')")</code></li>
+</ul>
+<h2 id="857-add-if-insert_course_result">857. Add if INSERT_COURSE_RESULT<a class="headerlink" href="#857-add-if-insert_course_result" title="Permanent link"></a></h2>
+<h3 id="8571">857.1<a class="headerlink" href="#8571" title="Permanent link"></a></h3>
+<p>The variable should be <code>INSERT 0 1</code> again if something gets inserted. Below the variable you just created, add an <code>if</code> condition that checks if it is and print <code>Inserted into courses, $COURSE</code> using <code>echo</code> in it&rsquo;s statements area.</p>
+<h4 id="hints_95">HINTS<a class="headerlink" href="#hints_95" title="Permanent link"></a></h4>
+<ul>
+<li>The condition you want is: <code>[[ $INSERT_COURSE_RESULT == "INSERT 0 1" ]]</code></li>
+<li>The <code>echo</code> part looks like this: <code>echo "Inserted into courses, $COURSE"</code></li>
+<li>The whole thing should look like this:
+<div class="highlight"><pre><span class="k">if</span> <span class="o">[[</span> <span class="nv">$INSERT_COURSE_RESULT</span> <span class="o">==</span> <span class="s2">&quot;INSERT 0 1&quot;</span> <span class="o">]]</span>
+<span class="k">then</span>
+  <span class="nb">echo</span> <span class="s2">&quot;Inserted into courses, </span><span class="nv">$COURSE</span><span class="s2">&quot;</span>
+<span class="k">fi</span>
+</pre></div></li>
+</ul>
+<h2 id="860-truncate-majors-cascade">860. TRUNCATE majors CASCADE<a class="headerlink" href="#860-truncate-majors-cascade" title="Permanent link"></a></h2>
+<h3 id="8601">860.1<a class="headerlink" href="#8601" title="Permanent link"></a></h3>
+<p>In the psql prompt, truncate the data from the <code>majors</code> table so you can run the script again.</p>
+<h4 id="hints_96">HINTS<a class="headerlink" href="#hints_96" title="Permanent link"></a></h4>
+<ul>
+<li>Here&rsquo;s an example: <code>TRUNCATE &lt;table_1&gt;, &lt;table_2&gt;;</code></li>
+<li>Make sure to delete data in the tables that use any of the <code>majors</code> columns as a foreign key at the same time</li>
+<li>You need to truncate <code>majors</code>, <code>students</code>, and <code>majors_courses</code> together</li>
+<li>Enter <code>TRUNCATE majors, students, majors_courses;</code> in the psql prompt</li>
+<li>Enter <code>psql --username=freecodecamp --dbname=students</code> in the terminal to log into the psql prompt if you aren&rsquo;t already</li>
+</ul>
+<h2 id="870-insert_datash">870. ./insert_data.sh<a class="headerlink" href="#870-insert_datash" title="Permanent link"></a></h2>
+<h3 id="8701">870.1<a class="headerlink" href="#8701" title="Permanent link"></a></h3>
+<p>Run the script to see if the courses get inserted into the database.</p>
+<h4 id="hints_97">HINTS<a class="headerlink" href="#hints_97" title="Permanent link"></a></h4>
+<ul>
+<li>Run your <code>insert_data.sh</code> script by executing it</li>
+<li>Type <code>./insert_data.sh</code> in the terminal and press enter</li>
+<li>The <code>majors</code> and <code>courses</code> tables should have three rows each after running the script. If they don&rsquo;t, there might be something wrong in the script. You can use the reset button to reset the lesson and run the script again</li>
+</ul>
+<h2 id="877-select-from-courses">877. SELECT * FROM courses<a class="headerlink" href="#877-select-from-courses" title="Permanent link"></a></h2>
+<h3 id="8771">877.1<a class="headerlink" href="#8771" title="Permanent link"></a></h3>
+<p>It looks like it worked. The test data has three unique courses, and three got added to the database. View the data in the <code>courses</code> table to make sure they are correct.</p>
+<h4 id="hints_98">HINTS<a class="headerlink" href="#hints_98" title="Permanent link"></a></h4>
+<ul>
+<li>Use the <code>SELECT</code> and <code>FROM</code> keywords with <code>*</code> to view all the data</li>
+<li>Enter <code>SELECT * FROM courses;</code> in the psql prompt</li>
+<li>Enter <code>psql --username=freecodecamp --dbname=students</code> in the terminal to log into the psql prompt if you aren&rsquo;t already</li>
+</ul>
+<h2 id="880-add-echo-truncate-tables">880. Add echo TRUNCATE tables<a class="headerlink" href="#880-add-echo-truncate-tables" title="Permanent link"></a></h2>
+<h3 id="8801">880.1<a class="headerlink" href="#8801" title="Permanent link"></a></h3>
+<p>Excellent. Instead of manually deleting the data each time you want to run the script, add the command to do it for you. Near the top of the file below your <code>PSQL</code> variable, use <code>echo</code> to query the database. In the query, truncate your four tables in this order: <code>students</code>, <code>majors</code>, <code>courses</code>, <code>majors_courses</code>.</p>
+<h4 id="hints_99">HINTS<a class="headerlink" href="#hints_99" title="Permanent link"></a></h4>
+<ul>
+<li>Here&rsquo;s an example: <code>echo $($PSQL "&lt;query_here&gt;")</code></li>
+<li>The query you want looks like this: <code>TRUNCATE students, majors, courses, majors_courses</code></li>
+<li>The whole line should look like this: <code>echo $($PSQL "TRUNCATE students, majors, courses, majors_courses")</code></li>
+</ul>
+<h2 id="890-insert_datash">890. ./insert_data.sh<a class="headerlink" href="#890-insert_datash" title="Permanent link"></a></h2>
+<h3 id="8901">890.1<a class="headerlink" href="#8901" title="Permanent link"></a></h3>
+<p>Run the script to see if it works.</p>
+<h4 id="hints_100">HINTS<a class="headerlink" href="#hints_100" title="Permanent link"></a></h4>
+<ul>
+<li>Run your <code>insert_data.sh</code> script by executing it</li>
+<li>Type <code>./insert_data.sh</code> in the terminal and press enter</li>
+<li>The <code>majors</code> and <code>courses</code> tables should have three rows each after running the script. If they don&rsquo;t, there might be something wrong in the script. You can use the reset button to reset the lesson and run the script again</li>
+</ul>
+<h2 id="900-add-course_id">900. Add COURSE_ID<a class="headerlink" href="#900-add-course_id" title="Permanent link"></a></h2>
+<h3 id="9001">900.1<a class="headerlink" href="#9001" title="Permanent link"></a></h3>
+<p>Awesome. That makes it easier. Below your <code>get new course_id</code> comment, set the <code>COURSE_ID</code> to the newly inserted <code>course_id</code>.</p>
+<h4 id="hints_101">HINTS<a class="headerlink" href="#hints_101" title="Permanent link"></a></h4>
+<ul>
+<li>Here&rsquo;s an example: <code>COURSE_ID=$($PSQL "&lt;query_here&gt;")</code></li>
+<li>For the query, you want to use the <code>SELECT</code>, <code>FROM</code>, and <code>WHERE</code> keywords</li>
+<li>Here&rsquo;s an example of how the query part looks: <code>SELECT &lt;column_name&gt; FROM &lt;table_name&gt; WHERE &lt;condition&gt;</code></li>
+<li>The condition you want is <code>course_id='$COURSE'</code></li>
+<li>Here&rsquo;s how the query should look: <code>SELECT course_id FROM courses WHERE course='$COURSE'</code></li>
+<li>Here&rsquo;s how the whole line should look: <code>COURSE_ID=$($PSQL "SELECT course_id FROM courses WHERE course='$COURSE'")</code></li>
+<li>Make sure it&rsquo;s in the <code>if [[ -z $COURSE_ID ]]</code> statements area</li>
+</ul>
+<h2 id="910-add-insert_majors_courses_result">910. Add INSERT_MAJORS_COURSES_RESULT<a class="headerlink" href="#910-add-insert_majors_courses_result" title="Permanent link"></a></h2>
+<h3 id="9101">910.1<a class="headerlink" href="#9101" title="Permanent link"></a></h3>
+<p>One more thing to add for this file. Below the <code>insert into majors_courses</code> courses comment, create a <code>INSERT_MAJORS_COURSES_RESULT</code> variable. Use it and the <code>MAJOR_ID</code> and <code>COURSE_ID</code> variables you created to insert a row into the <code>majors_courses</code> table. Make sure the query has the <code>major_id</code> column first. Also, you won&rsquo;t need any quotes around the values for the ID&rsquo;s.</p>
+<h4 id="hints_102">HINTS<a class="headerlink" href="#hints_102" title="Permanent link"></a></h4>
+<ul>
+<li>Here&rsquo;s an example: <code>INSERT_MAJORS_COURSES_RESULT=$($PSQL "&lt;query_here&gt;")</code></li>
+<li>For the query, you want to use the <code>INSERT INTO</code>, and <code>VALUES</code> keywords</li>
+<li>Here&rsquo;s an example of how the query part looks: <code>INSERT INTO &lt;table_name&gt;(&lt;column_name&gt;) VALUES(&lt;value&gt;)</code></li>
+<li>Check the table structure in the psql prompt with <code>\d majors_courses</code> if you need to see the columns</li>
+<li>You want to add values for the <code>major_id</code> and <code>course_id</code> columns</li>
+<li>The query you want is: <code>INSERT INTO majors_courses(major_id, course_id) VALUES($MAJOR_ID, $COURSE_ID)</code></li>
+<li>Here&rsquo;s how the whole line should look: <code>INSERT_MAJORS_COURSES_RESULT=$($PSQL "INSERT INTO majors_courses(major_id, course_id) VALUES($MAJOR_ID, $COURSE_ID)")</code></li>
+</ul>
+<h2 id="920-add-if-insert_majors_courses_result">920. Add if INSERT_MAJORS_COURSES_RESULT<a class="headerlink" href="#920-add-if-insert_majors_courses_result" title="Permanent link"></a></h2>
+<h3 id="9201">920.1<a class="headerlink" href="#9201" title="Permanent link"></a></h3>
+<p>Below the variable you just created, add an if condition that checks if it&rsquo;s equal to <code>INSERT 0 1</code> like the others. In it&rsquo;s statements area, use <code>echo</code> to print <code>Inserted into majors_courses, $MAJOR : $COURSE</code>.</p>
+<h4 id="hints_103">HINTS<a class="headerlink" href="#hints_103" title="Permanent link"></a></h4>
+<ul>
+<li>The condition you want is: <code>[[ $INSERT_MAJORS_COURSES_RESULT == "INSERT 0 1" ]]</code></li>
+<li>The <code>echo</code> part looks like this: <code>echo "Inserted into majors_courses, $MAJOR : $COURSE"</code></li>
+<li>The whole thing should look like this:
+<div class="highlight"><pre><span class="k">if</span> <span class="o">[[</span> <span class="nv">$INSERT_MAJORS_COURSES_RESULT</span> <span class="o">==</span> <span class="s2">&quot;INSERT 0 1&quot;</span> <span class="o">]]</span>
+<span class="k">then</span>
+  <span class="nb">echo</span> <span class="s2">&quot;Inserted into majors_courses, </span><span class="nv">$MAJOR</span><span class="s2"> : </span><span class="nv">$COURSE</span><span class="s2">&quot;</span>
+<span class="k">fi</span>
+</pre></div></li>
+</ul>
+<h2 id="930-insert_datash">930. ./insert_data.sh<a class="headerlink" href="#930-insert_datash" title="Permanent link"></a></h2>
+<h3 id="9301">930.1<a class="headerlink" href="#9301" title="Permanent link"></a></h3>
+<p>Run the script. Your tables should get truncated and then it should go through the loop and add all the data from the <code>courses_test.csv</code> into the three tables of the database.</p>
+<h4 id="hints_104">HINTS<a class="headerlink" href="#hints_104" title="Permanent link"></a></h4>
+<ul>
+<li>Run your <code>insert_data.sh</code> script by executing it</li>
+<li>Type <code>./insert_data.sh</code> in the terminal and press enter</li>
+<li>After running the script, the <code>majors</code> and <code>courses</code> tables should have three rows each, and the <code>majors_courses</code> table should have four. If they don&rsquo;t, there might be something wrong in the script. You can use the reset button to reset the lesson and run the script again</li>
+</ul>
+<h2 id="950-select-from-majors">950. SELECT * FROM majors<a class="headerlink" href="#950-select-from-majors" title="Permanent link"></a></h2>
+<h3 id="9501">950.1<a class="headerlink" href="#9501" title="Permanent link"></a></h3>
+<p>Looks like it works. You better look around to make sure. View the data in the <code>majors</code> table.</p>
+<h4 id="hints_105">HINTS<a class="headerlink" href="#hints_105" title="Permanent link"></a></h4>
+<ul>
+<li>Use the psql prompt</li>
+<li>Use the <code>SELECT</code> and <code>FROM</code> keywords with <code>*</code> to view all the data in the <code>majors</code> table</li>
+<li>Enter <code>SELECT * FROM majors;</code> in the psql prompt</li>
+<li>Enter <code>psql --username=freecodecamp --dbname=students</code> in the terminal to log into the psql prompt if you aren&rsquo;t already</li>
+</ul>
+<h2 id="960-select-from-courses">960. SELECT * FROM courses<a class="headerlink" href="#960-select-from-courses" title="Permanent link"></a></h2>
+<h3 id="9601">960.1<a class="headerlink" href="#9601" title="Permanent link"></a></h3>
+<p>Cool, check the <code>courses</code> table.</p>
+<h4 id="hints_106">HINTS<a class="headerlink" href="#hints_106" title="Permanent link"></a></h4>
+<ul>
+<li>Use the psql prompt</li>
+<li>Use the <code>SELECT</code> and <code>FROM</code> keywords with <code>*</code> to view all the data in the <code>courses</code> table</li>
+<li>Enter <code>SELECT * FROM courses;</code> in the psql prompt</li>
+<li>Enter <code>psql --username=freecodecamp --dbname=students</code> in the terminal to log into the psql prompt if you aren&rsquo;t already</li>
+</ul>
+<h2 id="965-select-from-majors_courses">965. SELECT * FROM majors_courses<a class="headerlink" href="#965-select-from-majors_courses" title="Permanent link"></a></h2>
+<h3 id="9651">965.1<a class="headerlink" href="#9651" title="Permanent link"></a></h3>
+<p>Lastly, view the data in the <code>majors_courses</code> table. There should be four rows.</p>
+<h4 id="hints_107">HINTS<a class="headerlink" href="#hints_107" title="Permanent link"></a></h4>
+<ul>
+<li>Use the psql prompt</li>
+<li>Use the <code>SELECT</code> and <code>FROM</code> keywords with <code>*</code> to view all the data</li>
+<li>Enter <code>SELECT * FROM majors_courses;</code> in the psql prompt</li>
+<li>Enter <code>psql --username=freecodecamp --dbname=students</code> in the terminal to log into the psql prompt if you aren&rsquo;t already</li>
+</ul>
+<h2 id="970-cp-studentscsv">970. cp students.csv<a class="headerlink" href="#970-cp-studentscsv" title="Permanent link"></a></h2>
+<h3 id="9701">970.1<a class="headerlink" href="#9701" title="Permanent link"></a></h3>
+<p>Alright, that part of the script is done. Next, you need to add everything from the <code>students.csv</code> file. Make some test data again. In the terminal, use the copy command to copy <code>students.csv</code> into a file named <code>students_test.csv</code>.</p>
+<h4 id="hints_108">HINTS<a class="headerlink" href="#hints_108" title="Permanent link"></a></h4>
+<ul>
+<li><code>cp</code> is the copy command</li>
+<li>Here&rsquo;s an example: <code>cp &lt;filename&gt; &lt;new_name&gt;</code></li>
+<li>Enter <code>cp students.csv students_test.csv</code> in the terminal</li>
+</ul>
+<h2 id="975-remove-all-but-fours-lines">975. Remove all but fours lines<a class="headerlink" href="#975-remove-all-but-fours-lines" title="Permanent link"></a></h2>
+<h3 id="9751">975.1<a class="headerlink" href="#9751" title="Permanent link"></a></h3>
+<p>In the <code>students_test.csv</code> file, remove everything but the first five lines like you did for the other test file. Make sure there&rsquo;s an empty line at the bottom again.</p>
+<h4 id="hints_109">HINTS<a class="headerlink" href="#hints_109" title="Permanent link"></a></h4>
+<ul>
+<li>Remove all but the first five lines from the <code>students_test.csv</code> file</li>
+<li>Or, replace everything in <code>students_test.csv</code> with the first five lines from <code>students.csv</code></li>
+<li>Make sure there&rsquo;s one empty line at the bottom</li>
+<li>The <code>students_test.csv</code> file should look like this:
+<div class="highlight"><pre>first_name,last_name,major,gpa
+Rhea,Kellems,Database Administration,2.5
+Emma,Gilbert,null,null
+Kimberly,Whitley,Web Development,3.8
+Jimmy,Felipe,Database Administration,3.7
+</pre></div></li>
+</ul>
+<h2 id="980-add-cat-students_testcsv">980. Add cat students_test.csv<a class="headerlink" href="#980-add-cat-students_testcsv" title="Permanent link"></a></h2>
+<h3 id="9801">980.1<a class="headerlink" href="#9801" title="Permanent link"></a></h3>
+<p>You want to loop through all this info like you did for the other CSV file. The process is the same. Below your existing loop, use <code>cat</code> to print your new test file. Pipe the results into a <code>while</code> loop, setting the <code>IFS</code> to a comma again, and then use <code>read</code> to create <code>FIRST</code>, <code>LAST</code>, <code>MAJOR</code> and <code>GPA</code> variables from the data. In the loop, use <code>echo</code> to print the <code>FIRST</code> variable.</p>
+<h4 id="hints_110">HINTS<a class="headerlink" href="#hints_110" title="Permanent link"></a></h4>
+<ul>
+<li>It should look real similar to your other loop like this</li>
+<li>Here&rsquo;s an example:
+<div class="highlight"><pre>cat &lt;filename&gt; <span class="p">|</span> <span class="k">while</span> <span class="nv">IFS</span><span class="o">=</span><span class="s2">&quot;,&quot;</span> <span class="nb">read </span>VARIABLE_1 VARIABLE_2 VARIABLE_3 VARIABLE_4
+<span class="k">do</span>
+  STATEMENTS
+<span class="k">done</span>
+</pre></div></li>
+<li>Here&rsquo;s how it looks:
+<div class="highlight"><pre>cat students_test.csv <span class="p">|</span> <span class="k">while</span> <span class="nv">IFS</span><span class="o">=</span><span class="s2">&quot;,&quot;</span> <span class="nb">read </span>FIRST LAST MAJOR GPA
+<span class="k">do</span>
+  <span class="nb">echo</span> <span class="nv">$FIRST</span>
+<span class="k">done</span>
+</pre></div></li>
+</ul>
+<h2 id="985-insert_datash">985. ./insert_data.sh<a class="headerlink" href="#985-insert_datash" title="Permanent link"></a></h2>
+<h3 id="9851">985.1<a class="headerlink" href="#9851" title="Permanent link"></a></h3>
+<p>Run the script to see if it prints the <code>FIRST</code> (<code>first_name</code>) variable correctly. It will take a second since it has to go through the first loop.</p>
+<h4 id="hints_111">HINTS<a class="headerlink" href="#hints_111" title="Permanent link"></a></h4>
+<ul>
+<li>Run your <code>insert_data.sh</code> script by executing it</li>
+<li>Type <code>./insert_data.sh</code> in the terminal and press enter</li>
+<li>After running the script, the <code>majors</code> and <code>courses</code> tables should have three rows each, and the <code>majors_courses</code> table should have four. If they don&rsquo;t, there might be something wrong in the script. You can use the reset button to reset the lesson and run the script again</li>
+</ul>
+<h2 id="1020-delete-echo-all-variables">1020. Delete echo all variables<a class="headerlink" href="#1020-delete-echo-all-variables" title="Permanent link"></a></h2>
+<h3 id="10201">1020.1<a class="headerlink" href="#10201" title="Permanent link"></a></h3>
+<p>It works <img align="absmiddle" alt=":sweat_smile:" class="gemoji" height="20px" src="https://github.githubassets.com/images/icons/emoji/unicode/1f605.png" title=":sweat_smile:" width="20px" /> It printed the first item in each row of the CSV file. It&rsquo;s printing the first line again, you will have to take care of that. First, delete the <code>echo</code> line.</p>
+<h4 id="hints_112">HINTS<a class="headerlink" href="#hints_112" title="Permanent link"></a></h4>
+<ul>
+<li>Delete the <code>echo $FIRST</code> line</li>
+</ul>
+<h2 id="1022-add-if-first_name">1022. Add if first_name<a class="headerlink" href="#1022-add-if-first_name" title="Permanent link"></a></h2>
+<h3 id="10221">1022.1<a class="headerlink" href="#10221" title="Permanent link"></a></h3>
+<p>Add an if condition to the loop that checks if the <code>FIRST</code> variable is not equal to <code>first_name</code> so it doesn&rsquo;t do anything for the first line of the file. Don&rsquo;t put anything in the statements area for now.</p>
+<h4 id="hints_113">HINTS<a class="headerlink" href="#hints_113" title="Permanent link"></a></h4>
+<ul>
+<li>Here&rsquo;s an example of an <code>if</code>:
+<div class="highlight"><pre><span class="k">if</span> <span class="o">[[</span> CONDITION <span class="o">]]</span>
+<span class="k">then</span>
+  STATEMENTS
+<span class="k">fi</span>
+</pre></div></li>
+<li>The condition you want is <code>[[ $FIRST != "first_name" ]]</code></li>
+<li>Your second loop should look like this:
+<div class="highlight"><pre>cat students_test.csv <span class="p">|</span> <span class="k">while</span> <span class="nv">IFS</span><span class="o">=</span><span class="s2">&quot;,&quot;</span> <span class="nb">read </span>FIRST LAST MAJOR GPA
+<span class="k">do</span>
+  <span class="k">if</span> <span class="o">[[</span> <span class="nv">$FIRST</span> !<span class="o">=</span> <span class="s2">&quot;first_name&quot;</span> <span class="o">]]</span>
+  <span class="k">then</span>
+
+  <span class="k">fi</span>
+<span class="k">done</span>
+</pre></div></li>
+</ul>
+<h2 id="1025-add-comments">1025. Add comments<a class="headerlink" href="#1025-add-comments" title="Permanent link"></a></h2>
+<h3 id="10251">1025.1<a class="headerlink" href="#10251" title="Permanent link"></a></h3>
+<p>All the columns in the CSV file can be inserted directly into the database except for the major. You will need to get the <code>major_id</code> again for that. There&rsquo;s some <code>null</code> values in there as well, so you will need to use <code>null</code> if the <code>major_id</code> isn&rsquo;t found. Add four single line comments in your loop; <code>get major_id</code>, <code>if not found</code>, <code>set to null</code>, and <code>insert student</code> in that order.</p>
+<h4 id="hints_114">HINTS<a class="headerlink" href="#hints_114" title="Permanent link"></a></h4>
+<ul>
+<li>Here&rsquo;s an example of a single comment: <code># &lt;comment&gt;</code></li>
+<li>Add the four suggested single line comments, each on their own line, in the order given in the <code>if</code> part of your new loop</li>
+<li>It should look like this:
+<div class="highlight"><pre>cat students_test.csv <span class="p">|</span> <span class="k">while</span> <span class="nv">IFS</span><span class="o">=</span><span class="s2">&quot;,&quot;</span> <span class="nb">read </span>FIRST LAST MAJOR GPA
+<span class="k">do</span>
+  <span class="k">if</span> <span class="o">[[</span> <span class="nv">$FIRST</span> !<span class="o">=</span> <span class="s2">&quot;first_name&quot;</span> <span class="o">]]</span>
+  <span class="k">then</span>
+    <span class="c1"># get major_id</span>
+
+    <span class="c1"># if not found</span>
+
+    <span class="c1"># set to null</span>
+
+    <span class="c1"># insert student</span>
+
+  <span class="k">fi</span>
+<span class="k">done</span>
+</pre></div></li>
+</ul>
+<h2 id="1030-add-major_id">1030. Add MAJOR_ID<a class="headerlink" href="#1030-add-major_id" title="Permanent link"></a></h2>
+<h3 id="10301">1030.1<a class="headerlink" href="#10301" title="Permanent link"></a></h3>
+<p>Below the new <code>get major_id</code> comment, set the <code>MAJOR_ID</code> variable to a query that gets the <code>major_id</code> for the current students major.</p>
+<h4 id="hints_115">HINTS<a class="headerlink" href="#hints_115" title="Permanent link"></a></h4>
+<ul>
+<li>Here&rsquo;s an example of how it looks: <code>MAJOR_ID=$($PSQL "&lt;query_here&gt;")</code></li>
+<li>For the query, you want to use the <code>SELECT</code>, <code>FROM</code>, and <code>WHERE</code> keywords</li>
+<li>Here&rsquo;s an example of how the query part looks: <code>SELECT &lt;column_name&gt; FROM &lt;table_name&gt; WHERE &lt;condition&gt;</code></li>
+<li>The condition you want is <code>major_id='$MAJOR'</code></li>
+<li>Here&rsquo;s how the query should look: <code>SELECT major_id FROM majors WHERE major='$MAJOR'</code></li>
+<li>Here&rsquo;s how the whole line should look: <code>MAJOR_ID=$($PSQL "SELECT major_id FROM majors WHERE major='$MAJOR'")</code></li>
+</ul>
+<h2 id="1033-add-echo-major_id">1033. Add echo MAJOR_ID<a class="headerlink" href="#1033-add-echo-major_id" title="Permanent link"></a></h2>
+<h3 id="10331">1033.1<a class="headerlink" href="#10331" title="Permanent link"></a></h3>
+<p>Below that, use <code>echo</code> to print the variable so you can see if it&rsquo;s working.</p>
+<h4 id="hints_116">HINTS<a class="headerlink" href="#hints_116" title="Permanent link"></a></h4>
+<ul>
+<li>Add <code>echo $MAJOR_ID</code> below the <code>MAJOR_ID</code> variable you just created</li>
+</ul>
+<h2 id="1037-insert_datash">1037. ./insert_data.sh<a class="headerlink" href="#1037-insert_datash" title="Permanent link"></a></h2>
+<h3 id="10371">1037.1<a class="headerlink" href="#10371" title="Permanent link"></a></h3>
+<p>Run the script to see what happens.</p>
+<h4 id="hints_117">HINTS<a class="headerlink" href="#hints_117" title="Permanent link"></a></h4>
+<ul>
+<li>Run your <code>insert_data.sh</code> script by executing it</li>
+<li>Type <code>./insert_data.sh</code> in the terminal and press enter</li>
+<li>After running the script, the <code>majors</code> and <code>courses</code> tables should have three rows each, and the <code>majors_courses</code> table should have four. If they don&rsquo;t, there might be something wrong in the script. You can use the reset button to reset the lesson and run the script again</li>
+</ul>
+<h2 id="1047-add-if-z-major_id">1047. Add if -z MAJOR_ID<a class="headerlink" href="#1047-add-if-z-major_id" title="Permanent link"></a></h2>
+<h3 id="10471">1047.1<a class="headerlink" href="#10471" title="Permanent link"></a></h3>
+<p>Looking at the test data, it found the ID for all of it except the <code>null</code> value. Below the newest <code>if not found</code> comment, add an <code>if</code> that checks if the variable is empty. Put the <code>set to null</code> comment in its statements area.</p>
+<h4 id="hints_118">HINTS<a class="headerlink" href="#hints_118" title="Permanent link"></a></h4>
+<ul>
+<li>It looks similar to the <code>if</code> condition in your first loop</li>
+<li>The condition you want is <code>[[ -z $MAJOR_ID ]]</code></li>
+<li>Make sure the <code>set to null</code> comment is in the statements area</li>
+<li>It should look like this:
+<div class="highlight"><pre><span class="k">if</span> <span class="o">[[</span> -z <span class="nv">$MAJOR_ID</span> <span class="o">]]</span>
+<span class="k">then</span>
+  <span class="c1"># set to null</span>
+
+<span class="k">fi</span>
+</pre></div></li>
+</ul>
+<h2 id="1048-set-major_id-to-null">1048. Set MAJOR_ID to null<a class="headerlink" href="#1048-set-major_id-to-null" title="Permanent link"></a></h2>
+<h3 id="10481">1048.1<a class="headerlink" href="#10481" title="Permanent link"></a></h3>
+<p>When you go to insert the student data, you want to use the <code>MAJOR_ID</code> if it&rsquo;s found, or <code>null</code> if not. Below the <code>set to null</code> comment, set the <code>MAJOR_ID</code> variable to <code>null</code> so you can use it to insert the data.</p>
+<h4 id="hints_119">HINTS<a class="headerlink" href="#hints_119" title="Permanent link"></a></h4>
+<ul>
+<li>It should look like this:
+<div class="highlight"><pre><span class="k">if</span> <span class="o">[[</span> -z <span class="nv">$MAJOR_ID</span> <span class="o">]]</span>
+<span class="k">then</span>
+  <span class="c1"># set to null</span>
+  <span class="nv">MAJOR_ID</span><span class="o">=</span>null
+<span class="k">fi</span>
+</pre></div></li>
+</ul>
+<h2 id="1049-move-echo-major_id">1049. move echo MAJOR_ID<a class="headerlink" href="#1049-move-echo-major_id" title="Permanent link"></a></h2>
+<h3 id="10491">1049.1<a class="headerlink" href="#10491" title="Permanent link"></a></h3>
+<p>Move the <code>echo $MAJOR_ID</code> line to below the <code>if</code> statement so you can run the script and see the value of the variable if the <code>major_id</code> is or isn&rsquo;t found.</p>
+<h4 id="hints_120">HINTS<a class="headerlink" href="#hints_120" title="Permanent link"></a></h4>
+<ul>
+<li>Move the suggested line below the closing <code>fi</code> of the <code>if [[ -z $MAJOR_ID ]]</code> statement</li>
+</ul>
+<h2 id="1050-insert_datash">1050. ./insert_data.sh<a class="headerlink" href="#1050-insert_datash" title="Permanent link"></a></h2>
+<h3 id="10501">1050.1<a class="headerlink" href="#10501" title="Permanent link"></a></h3>
+<p>Run the script.</p>
+<h4 id="hints_121">HINTS<a class="headerlink" href="#hints_121" title="Permanent link"></a></h4>
+<ul>
+<li>Run your <code>insert_data.sh</code> script by executing it</li>
+<li>Type <code>./insert_data.sh</code> in the terminal and press enter</li>
+<li>After running the script, the <code>majors</code> and <code>courses</code> tables should have three rows each, and the <code>majors_courses</code> table should have four. If they don&rsquo;t, there might be something wrong in the script. You can use the reset button to reset the lesson and run the script again</li>
+</ul>
+<h2 id="1053-delete-echo-major_id">1053. Delete echo MAJOR_ID<a class="headerlink" href="#1053-delete-echo-major_id" title="Permanent link"></a></h2>
+<h3 id="10531">1053.1<a class="headerlink" href="#10531" title="Permanent link"></a></h3>
+<p>Okay, that should work for inserting the student. Delete the <code>echo $MAJOR_ID</code> line.</p>
+<h4 id="hints_122">HINTS<a class="headerlink" href="#hints_122" title="Permanent link"></a></h4>
+<ul>
+<li>Delete the <code>echo $MAJOR_ID</code> line from the file</li>
+</ul>
+<h2 id="1057-d-students">1057. \d students<a class="headerlink" href="#1057-d-students" title="Permanent link"></a></h2>
+<h3 id="10571">1057.1<a class="headerlink" href="#10571" title="Permanent link"></a></h3>
+<p>One last thing to add. In the psql prompt, view the details of the <code>students</code> table so you can see what columns to add.</p>
+<h4 id="hints_123">HINTS<a class="headerlink" href="#hints_123" title="Permanent link"></a></h4>
+<ul>
+<li>Use the <strong>d</strong>isplay shortcut command</li>
+<li>Add the table name after the command</li>
+<li>It&rsquo;s the <code>\d</code> command</li>
+<li>Here&rsquo;s an example: <code>\d &lt;table_name&gt;</code></li>
+<li>Type <code>\d students</code> into the psql prompt</li>
+<li>Enter <code>psql --username=freecodecamp --dbname=students</code> in the terminal to log into the psql prompt if you aren&rsquo;t already</li>
+</ul>
+<h2 id="1060-add-insert_student_result">1060. Add INSERT_STUDENT_RESULT<a class="headerlink" href="#1060-add-insert_student_result" title="Permanent link"></a></h2>
+<h3 id="10601">1060.1<a class="headerlink" href="#10601" title="Permanent link"></a></h3>
+<p>You will need to set the four columns when adding the student info. All of them except <code>student_id</code>. Below the <code>insert student</code> comment, create an <code>INSERT_STUDENT_RESULT</code> variable that adds the student to the database. Add the columns in the order they appear in the data, and make sure to only put the two <code>VARCHAR</code> columns in single quotes.</p>
+<h4 id="hints_124">HINTS<a class="headerlink" href="#hints_124" title="Permanent link"></a></h4>
+<ul>
+<li>Here&rsquo;s an example: <code>INSERT_STUDENT_RESULT=$($PSQL "&lt;query_here&gt;")</code></li>
+<li>For the query, you want to use the <code>INSERT INTO</code>, and <code>VALUES</code> keywords</li>
+<li>Here&rsquo;s an example of how the query part looks: <code>INSERT INTO &lt;table_name&gt;(&lt;column_1&gt;, &lt;column_N&gt;) VALUES(&lt;value_1&gt;, &lt;value_N&gt;)</code></li>
+<li>In your query, make sure the columns to add are in this order: <code>first_name</code>, <code>last_name</code>, <code>major_id</code>, and <code>gpa</code></li>
+<li>The query you want is: <code>INSERT INTO students(first_name, last_name, major_id, gpa) VALUES('$FIRST', '$LAST', $MAJOR_ID, $GPA)</code></li>
+<li>Here&rsquo;s how the whole line should look: <code>INSERT_STUDENT_RESULT=$($PSQL "INSERT INTO students(first_name, last_name, major_id, gpa) VALUES('$FIRST', '$LAST', $MAJOR_ID, $GPA)")</code></li>
+</ul>
+<h2 id="1070-add-if-insert_student_result">1070. Add if INSERT_STUDENT_RESULT<a class="headerlink" href="#1070-add-if-insert_student_result" title="Permanent link"></a></h2>
+<h3 id="10701">1070.1<a class="headerlink" href="#10701" title="Permanent link"></a></h3>
+<p>Below the variable you just created, add an <code>if</code> statement that checks if it&rsquo;s equal to <code>INSERT 0 1</code> like the others. If it is, use <code>echo</code> to print <code>Inserted into students, &lt;first_name&gt; &lt;last_name&gt;</code>.</p>
+<h4 id="hints_125">HINTS<a class="headerlink" href="#hints_125" title="Permanent link"></a></h4>
+<ul>
+<li>The condition should look like this: <code>if [[ $INSERT_STUDENT_RESULT == "INSERT 0 1" ]]</code></li>
+<li>Use the <code>FIRST</code> and <code>LAST</code> variables to print the students name</li>
+<li>The <code>echo</code> should look like this: <code>echo Inserted into students, $FIRST $LAST</code></li>
+<li>The whole thing should look like this:
+<div class="highlight"><pre><span class="k">if</span> <span class="o">[[</span> <span class="nv">$INSERT_STUDENT_RESULT</span> <span class="o">==</span> <span class="s2">&quot;INSERT 0 1&quot;</span> <span class="o">]]</span>
+<span class="k">then</span>
+  <span class="nb">echo</span> <span class="s2">&quot;Inserted into students, </span><span class="nv">$FIRST</span><span class="s2"> </span><span class="nv">$LAST</span><span class="s2">&quot;</span>
+<span class="k">fi</span>
+</pre></div></li>
+</ul>
+<h2 id="1080-insert_datash">1080. ./insert_data.sh<a class="headerlink" href="#1080-insert_datash" title="Permanent link"></a></h2>
+<h3 id="10801">1080.1<a class="headerlink" href="#10801" title="Permanent link"></a></h3>
+<p>Run the script to see if the students are getting added.</p>
+<h4 id="hints_126">HINTS<a class="headerlink" href="#hints_126" title="Permanent link"></a></h4>
+<ul>
+<li>Run your <code>insert_data.sh</code> script by executing it</li>
+<li>Type <code>./insert_data.sh</code> in the terminal and press enter</li>
+<li>After running the script, the <code>majors</code> and <code>courses</code> tables should have three rows each, and the <code>majors_courses</code> and <code>students</code> tables should have four. If they don&rsquo;t, there might be something wrong in the script. You can use the reset button to reset the lesson and run the script again</li>
+</ul>
+<h2 id="1090-select-from-students">1090. SELECT * FROM students<a class="headerlink" href="#1090-select-from-students" title="Permanent link"></a></h2>
+<h3 id="10901">1090.1<a class="headerlink" href="#10901" title="Permanent link"></a></h3>
+<p>I think it&rsquo;s working. View all the data in the <code>students</code> table to make sure it matches the CSV file.</p>
+<h4 id="hints_127">HINTS<a class="headerlink" href="#hints_127" title="Permanent link"></a></h4>
+<ul>
+<li>Use the <code>SELECT</code> and <code>FROM</code> keywords with <code>*</code> to view all the data</li>
+<li>Enter <code>SELECT * FROM students;</code> in the psql prompt</li>
+<li>Enter <code>psql --username=freecodecamp --dbname=students</code> in the terminal to log into the psql prompt if you aren&rsquo;t already</li>
+</ul>
+<h2 id="1120-change-to-cat-coursescsv">1120. Change to cat courses.csv<a class="headerlink" href="#1120-change-to-cat-coursescsv" title="Permanent link"></a></h2>
+<h3 id="11201">1120.1<a class="headerlink" href="#11201" title="Permanent link"></a></h3>
+<p>Excellent. It added all the students from the test data. Time to try it with the original files. Change the <code>cat courses_test.csv</code> line to use the original file again.</p>
+<h4 id="hints_128">HINTS<a class="headerlink" href="#hints_128" title="Permanent link"></a></h4>
+<ul>
+<li>Change <code>cat courses_test.csv</code> to <code>cat courses.csv</code></li>
+<li>The suggested line should look like this: <code>cat courses.csv | while IFS="," read MAJOR COURSE</code></li>
+</ul>
+<h2 id="1130-change-to-cat-studentscsv">1130. Change to cat students.csv<a class="headerlink" href="#1130-change-to-cat-studentscsv" title="Permanent link"></a></h2>
+<h3 id="11301">1130.1<a class="headerlink" href="#11301" title="Permanent link"></a></h3>
+<p>Next, change the <code>cat students_test.csv</code> line to use the original file as well.</p>
+<h4 id="hints_129">HINTS<a class="headerlink" href="#hints_129" title="Permanent link"></a></h4>
+<ul>
+<li>Change the <code>cat students_test.csv</code> to <code>cat students.csv</code></li>
+<li>The suggested line should look like this: <code>cat students.csv | while IFS="," read FIRST LAST MAJOR GPA</code></li>
+</ul>
+<h2 id="1140-insert_datash">1140. ./insert_data.sh<a class="headerlink" href="#1140-insert_datash" title="Permanent link"></a></h2>
+<h3 id="11401">1140.1<a class="headerlink" href="#11401" title="Permanent link"></a></h3>
+<p>Time for the moment of truth. Run the script and see if it works.</p>
+<h4 id="hints_130">HINTS<a class="headerlink" href="#hints_130" title="Permanent link"></a></h4>
+<ul>
+<li>Run your <code>insert_data.sh</code> script by executing it</li>
+<li>Type <code>./insert_data.sh</code> in the terminal and press enter</li>
+<li>After running the script, the tables should have this many rows: <code>majors</code> has 7, <code>courses</code> has 17, <code>majors_courses</code> has 28, and <code>students</code> should have 31. If they don&rsquo;t, there might be something wrong in the script. You can use the reset button to reset the lesson and run the script again</li>
+</ul>
+<h2 id="1150-select-from-students">1150. SELECT * FROM students<a class="headerlink" href="#1150-select-from-students" title="Permanent link"></a></h2>
+<h3 id="11501">1150.1<a class="headerlink" href="#11501" title="Permanent link"></a></h3>
+<p>That was cool. View all the data in the <code>students</code> table to see what you ended up with.</p>
+<h4 id="hints_131">HINTS<a class="headerlink" href="#hints_131" title="Permanent link"></a></h4>
+<ul>
+<li>Use the <code>SELECT</code> and <code>FROM</code> keywords with <code>*</code> to view all the data</li>
+<li>Enter <code>SELECT * FROM students;</code> in the psql prompt</li>
+<li>Enter <code>psql --username=freecodecamp --dbname=students</code> in the terminal to log into the psql prompt if you aren&rsquo;t already</li>
+</ul>
+<h2 id="1160-select-from-majors">1160. SELECT * FROM majors<a class="headerlink" href="#1160-select-from-majors" title="Permanent link"></a></h2>
+<h3 id="11601">1160.1<a class="headerlink" href="#11601" title="Permanent link"></a></h3>
+<p>31 rows. That&rsquo;s how many are in the CSV file. Perfect. Next, check the <code>majors</code> table.</p>
+<h4 id="hints_132">HINTS<a class="headerlink" href="#hints_132" title="Permanent link"></a></h4>
+<ul>
+<li>Use the <code>SELECT</code> and <code>FROM</code> keywords with <code>*</code> to view all the data</li>
+<li>Enter <code>SELECT * FROM majors;</code> in the psql prompt</li>
+<li>Enter <code>psql --username=freecodecamp --dbname=students</code> in the terminal to log into the psql prompt if you aren&rsquo;t already</li>
+</ul>
+<h2 id="1170-select-from-courses">1170. SELECT * FROM courses<a class="headerlink" href="#1170-select-from-courses" title="Permanent link"></a></h2>
+<h3 id="11701">1170.1<a class="headerlink" href="#11701" title="Permanent link"></a></h3>
+<p>7 rows. There must be 7 unique majors in the CSV file. View what&rsquo;s in the <code>courses</code> table.</p>
+<h4 id="hints_133">HINTS<a class="headerlink" href="#hints_133" title="Permanent link"></a></h4>
+<ul>
+<li>Use the <code>SELECT</code> and <code>FROM</code> keywords with <code>*</code> to view all the data</li>
+<li>Enter <code>SELECT * FROM courses;</code> in the psql prompt</li>
+<li>Enter <code>psql --username=freecodecamp --dbname=students</code> in the terminal to log into the psql prompt if you aren&rsquo;t already</li>
+</ul>
+<h2 id="1180-select-from-majors_courses">1180. SELECT * FROM majors_courses<a class="headerlink" href="#1180-select-from-majors_courses" title="Permanent link"></a></h2>
+<h3 id="11801">1180.1<a class="headerlink" href="#11801" title="Permanent link"></a></h3>
+<p>Looks like there&rsquo;s 17 unique courses in the CSV file. Last, view the data in <code>majors_courses</code>. This should have the same number of rows at the CSV file.</p>
+<h4 id="hints_134">HINTS<a class="headerlink" href="#hints_134" title="Permanent link"></a></h4>
+<ul>
+<li>Use the <code>SELECT</code> and <code>FROM</code> keywords with <code>*</code> to view all the data</li>
+<li>Enter <code>SELECT * FROM majors_courses;</code> in the psql prompt</li>
+<li>Enter <code>psql --username=freecodecamp --dbname=students</code> in the terminal to log into the psql prompt if you aren&rsquo;t already</li>
+</ul>
+<h2 id="1190-ls">1190. ls<a class="headerlink" href="#1190-ls" title="Permanent link"></a></h2>
+<h3 id="11901">1190.1<a class="headerlink" href="#11901" title="Permanent link"></a></h3>
+<p>28 rows, same as the CSV file. I think all the data got added correctly. You don&rsquo;t need your test files anymore. In the terminal, use the list command to check what files are in your project folder.</p>
+<h4 id="hints_135">HINTS<a class="headerlink" href="#hints_135" title="Permanent link"></a></h4>
+<ul>
+<li>It&rsquo;s the <code>ls</code> command</li>
+<li>Don&rsquo;t use any flags with the command</li>
+<li>Enter <code>ls</code> in the terminal</li>
+</ul>
+<h2 id="1200-rm-students_testcsv">1200. rm students_test.csv<a class="headerlink" href="#1200-rm-students_testcsv" title="Permanent link"></a></h2>
+<h3 id="12001">1200.1<a class="headerlink" href="#12001" title="Permanent link"></a></h3>
+<p>Use the remove command (<code>rm</code>) to delete the <code>students_test.csv</code> file.</p>
+<h4 id="hints_136">HINTS<a class="headerlink" href="#hints_136" title="Permanent link"></a></h4>
+<ul>
+<li>Here&rsquo;s an example <code>rm &lt;filename&gt;</code></li>
+<li>Enter <code>rm students_test.csv</code> in the terminal</li>
+</ul>
+<h2 id="1205-rm-courses_testcsv">1205. rm courses_test.csv<a class="headerlink" href="#1205-rm-courses_testcsv" title="Permanent link"></a></h2>
+<h3 id="12051">1205.1<a class="headerlink" href="#12051" title="Permanent link"></a></h3>
+<p>Use the same command to delete the <code>courses_test.csv</code> file.</p>
+<h4 id="hints_137">HINTS<a class="headerlink" href="#hints_137" title="Permanent link"></a></h4>
+<ul>
+<li>Here&rsquo;s an example <code>rm &lt;filename&gt;</code></li>
+<li>Enter <code>rm courses_test.csv</code> in the terminal</li>
+</ul>
+<h2 id="1210-ls">1210. ls<a class="headerlink" href="#1210-ls" title="Permanent link"></a></h2>
+<h3 id="12101">1210.1<a class="headerlink" href="#12101" title="Permanent link"></a></h3>
+<p>List the contents of the folder again to make sure they&rsquo;re gone.</p>
+<h4 id="hints_138">HINTS<a class="headerlink" href="#hints_138" title="Permanent link"></a></h4>
+<ul>
+<li>Use the <strong>l</strong>ist command</li>
+<li>It&rsquo;s the <code>ls</code> command</li>
+<li>Don&rsquo;t use any flags with the command</li>
+<li>Enter <code>ls</code> in the terminal</li>
+</ul>
+<h2 id="1220-pg_dump-help">1220. pg_dump &ndash;help<a class="headerlink" href="#1220-pg_dump-help" title="Permanent link"></a></h2>
+<h3 id="12201">1220.1<a class="headerlink" href="#12201" title="Permanent link"></a></h3>
+<p>The database is finished for now. The last thing you are going to do is make a &ldquo;dump&rdquo; of it. The <code>pg_dump</code> command can do that for you. Use the <code>--help</code> flag with the command to see what it can do.</p>
+<h4 id="hints_139">HINTS<a class="headerlink" href="#hints_139" title="Permanent link"></a></h4>
+<ul>
+<li>Here&rsquo;s an example: <code>&lt;command&gt; &lt;flag&gt;</code></li>
+<li>Enter <code>pg_dump --help</code> in the terminal</li>
+<li>The bash terminal, not the psql one</li>
+<li>Press enter until you have seen the whole manual</li>
+</ul>
+<h2 id="1230-dump-database">1230. dump database<a class="headerlink" href="#1230-dump-database" title="Permanent link"></a></h2>
+<h3 id="12301">1230.1<a class="headerlink" href="#12301" title="Permanent link"></a></h3>
+<p>This is the last step. There&rsquo;s quite a few options there. Enter <code>pg_dump --clean --create --inserts --username=freecodecamp students &gt; students.sql</code> in the terminal to dump the database into a <code>students.sql</code> file. It will save all the commands needed to rebuild it. Take a quick look at the file when you are done.</p>
+<h4 id="hints_140">HINTS<a class="headerlink" href="#hints_140" title="Permanent link"></a></h4>
+<ul>
+<li>Enter the suggested command in the terminal</li>
+<li>The bash terminal, not the psql one</li>
+<li>Make sure you are in the <code>project</code> folder first</li>
+</ul></article></body></html>
