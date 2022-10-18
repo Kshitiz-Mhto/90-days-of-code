@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+   labels:
+     app: letsee
+   name: letsee
+spec:
+   ports:
+   - name: http
+     port: 9090
+     protocol: TCP
+     targetPort: 9090
+   selector:
+     app: letsee
+   type: NodePort
+

@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: letsee
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: letsee
+  template:
+    metadata:
+      labels:
+        app: letsee
+    spec:
+      containers:
+      - image: 5660982946/letsee
+        imagePullPolicy: IfNotPresent
+        name: letsee
+        ports:
+        - containerPort: 9090
+          name: http
+          protocol: TCP
