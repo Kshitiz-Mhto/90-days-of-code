@@ -111,6 +111,24 @@ service ssh status
 
 ![alt ssh connet](./assets/sshConnect.png)
 
+*Ansible knows all the server that are listed in anisble-inventory so we can,*
 
+*COMMAND*
 
+> `ansible -i inventory <host-names> -m ping -u root`
+
+*for my setup i can do like this*
+
+> `ansible <container-name> -m ping`
+![alt ping with ansible to server](./assets/pingingWithAnsible.png)
+
+*Flags*
+
+> *-i* -> inventory
+> *-m* -> module
+> *-a* -> argument for module
+
+*if we dont provide module while using only argument then the ansible apply the -m `command`*
+
+> Playing with ad-hoc commands
 
