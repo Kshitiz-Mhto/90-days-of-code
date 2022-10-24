@@ -26,7 +26,8 @@ Ansible is an open-source configuration management tool owned by RedHat, IT auto
 </div>
 <br>
 
-![alt architecture](./assets/ansibleArchi.jpeg)
+![alt architecture](./assets/ansibleArchi.jpeg) 
+![alt architecture](./assets/Ansible-Architecture-768x420.png)
 
 > Let's talk about Modules
 
@@ -95,7 +96,7 @@ Since, Modules are granular and specific for complex infrastructure and applicat
 ***
 
 > Here,In this demo, i am using docker container as my servers. I cannot afford the AWS EC2 server cause `i am poor` 
-[set up docker container for hosts]()
+[set up docker container as hosts](https://techq.medium.com/how-to-setup-ansible-dynamic-inventory-for-docker-using-ansible-plugin-ec308e677cd6)
  
 *Let's connect our poor server using ssh*
 
@@ -127,8 +128,47 @@ service ssh status
 > *-i* -> inventory
 > *-m* -> module
 > *-a* -> argument for module
+> *-b* -> become [different users that mean default as root]
 
 *if we dont provide module while using only argument then the ansible apply the -m `command`*
 
 > Playing with ad-hoc commands
 
+```
+An Ansible ad hoc command uses the /usr/bin/ansible command-line tool to automate a single task on one or more managed nodes. ad hoc commands are quick and easy, but they are not reusable.
+ad hoc commands are great for tasks you repeat rarely. For example, if you want to power off all the machines in your lab for Christmas vacation, you could execute a quick one-liner in Ansible without writing a playbook.
+These `ad-hoc commands`  are not used for configuration management and deployment, because these commands are of one time usage.
+`ansible-playbook` is used for configuration management and deployment.
+```
+
+> ansible [pattern] -m [module] -a "[module options]"
+
+![alt ad-hoc0](./assets/adhoc0.png)
+
+> `setup` module provide all the information about the server that ansible can figure out. It also help figuring out the some keys and arguments for the playbook while creating own playbook.
+
+![alt ad-hoc1](./assets/adhoc1.png)
+
+> `gather_facts` module provides the facts about the servers
+![alt ad-hoc2](./assets/adhoc2.png)
+
+> `ansible -i inventory -b -m yum -a "name=ntp state=present"`
+
+> to install the ntp package and to check the availaibility of the packages in those servers.
+
+![alt adhoc3](./assets/adhoc3.png)
+
+> `ansible -i inventory -b --ask-become-pass yum -a "name=ntp state=present"` 
+
+*or,*
+
+> `ansible -i inventory -b -K yum -a "name=ntp state=present"` for sudo user that requires password
+
+> `ansible-doc <module name>` provides docs for the provided module.
+
+***
+
+<div align="center">
+    <h1>Lets paly with playbook</h1>
+</div>
+<br>
