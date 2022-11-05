@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: alpine-deployment
   labels:
-    app: nginx
+    app: alpine
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: nginx
+      app: alpine
   template:
     metadata:
       labels:
-        app: nginx
+        app: alpine
     spec:
       containers:
-      - name: nginx
-        image: nginx:latest
+      - name: alpine
+        image: alpine:latest
         ports:
         - containerPort: 8008
 
