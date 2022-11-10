@@ -14,10 +14,9 @@ install (){
 }
 
 func (){
-    pi=$(ping $server_ip -w 3 -W 3)
-    data= grep $pi | "0% packet loss,"
-    sleep 3
-    if [[ -z "$data" ]]
+    
+    sleep 2
+    if [[ -z {ping $server_ip -w 3 -W 3} ]];
     then
         figlet -f big "Connection Failed"
     else
